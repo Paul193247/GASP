@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EcoTrek - Im Stil von Nothing</title>
+    <title>Gemeinsame Außen- und Sicherheitspolitk der EU</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <div class="container">
         <nav>
-          <div class="logo">EcoTrek</div>
+          <div class="logo">GASP</div>
           <ul class="nav-links">
             <li><a href="#">Übersicht</a></li>
             <li><a href="#">Funktionen</a></li>
@@ -18,7 +18,6 @@
             <li><a href="#">Nachhaltigkeit</a></li>
             <li><a href="#">Gemeinschaft</a></li>
           </ul>
-          <a href="#" class="buy-button">Kaufen</a>
         </nav>
       </div>
     </header>
@@ -30,21 +29,18 @@
         </div>
         <div class="parallax-layer layer-2">
           <!-- Middle layer -->
-          <img
-            src="/api/placeholder/400/800"
-            alt="EcoTrek Phone"
-            class="hero-image"
-          />
+          <img src="EU.png" alt="EcoTrek Phone" class="hero-image" />
         </div>
         <div class="parallax-layer layer-3">
           <!-- Foreground layer -->
           <div class="container">
             <div class="hero-content">
-              <h1>Nachhaltige Technologie. Radikal gedacht.</h1>
+              <h1>Die GASP der Europäischen Union</h1>
               <p>
-                Das EcoTrek Phone revolutioniert die Art, wie wir Smartphones
-                nutzen. Entwickelt mit voller Transparenz. Gebaut für die
-                Zukunft.
+                Die Gemeinsame Außen- und Sicherheitspolitik (GASP) der EU ist
+                ein zentraler Bestandteil der europäischen Integration. Sie
+                zielt darauf ab, die Außenbeziehungen der EU zu gestalten und
+                eine gemeinsame Sicherheitsstrategie zu entwickeln.
               </p>
               <a href="#" class="buy-button">Mehr erfahren</a>
             </div>
@@ -62,7 +58,7 @@
           CO₂-neutral.
         </p>
 
-        <!-- Dot matrix like Nothing's interface -->
+        <!-- Dot matrix like Nothing's interface
         <div class="dot-matrix">
           <div class="dot active"></div>
           <div class="dot"></div>
@@ -70,7 +66,7 @@
           <div class="dot active"></div>
           <div class="dot"></div>
           <div class="dot active"></div>
-          <!-- More dots... -->
+          More dots... -->
         </div>
       </div>
     </section>
@@ -84,22 +80,6 @@
             besitzen. EcoTrek repräsentiert eine Zukunft, in der Innovation und
             Umweltschutz Hand in Hand gehen.
           </p>
-        </div>
-        <div class="parataxe-layer" style="transform: translateY(0px)">
-          <img
-            src="/api/placeholder/600/900"
-            alt="EcoTrek Front"
-            class="parataxe-image"
-          />
-        </div>
-        <div class="parataxe-layer" style="transform: translateY(50px)">
-          <img
-            src="/api/placeholder/600/900"
-            alt="EcoTrek Back"
-            class="parataxe-image"
-          />
-        </div>
-      </div>
     </section>
 
     <section class="features">
@@ -299,12 +279,14 @@
             </ul>
           </div>
           <div class="footer-column">
-            <h3>Rechtliches</h3>
+            <h3>Aufgabenverteilung</h3>
             <ul class="footer-links">
-              <li><a href="#">AGB</a></li>
-              <li><a href="#">Datenschutz</a></li>
-              <li><a href="#">Impressum</a></li>
-              <li><a href="#">Garantie</a></li>
+              <li><a href="#">Paul Zörb</a></li>
+              <li><a href="#">Jannes Ruder</a></li>
+              <li><a href="#">Noah von Minden</a></li>
+              <li><a href="#">Mattis Reinecker</a></li>
+              <li><a href="#">Thor Hagen Standke</a></li>
+              <li><a href="#">Alexander Tobaben</a></li>
             </ul>
           </div>
         </div>
@@ -314,49 +296,6 @@
       </div>
     </footer>
 
-    <script>
-      // Simple parallax effect
-      document.addEventListener("scroll", function () {
-        const layers = document.querySelectorAll(".parallax-layer");
-        const scrollPosition = window.pageYOffset;
-
-        layers.forEach((layer, index) => {
-          const speed = 0.1 * (index + 1);
-          layer.style.transform = `translateY(${scrollPosition * speed}px)`;
-        });
-
-        // Parallax effect for parataxe section
-        const parataxeLayers = document.querySelectorAll(".parataxe-layer");
-        const parataxeSection = document.querySelector(".parataxe-section");
-
-        if (parataxeSection) {
-          const parataxeTop = parataxeSection.getBoundingClientRect().top;
-          const parataxeHeight = parataxeSection.offsetHeight;
-
-          if (
-            parataxeTop < window.innerHeight &&
-            parataxeTop > -parataxeHeight
-          ) {
-            const scrollRatio =
-              (window.innerHeight - parataxeTop) /
-              (window.innerHeight + parataxeHeight);
-
-            parataxeLayers.forEach((layer, index) => {
-              const speed = 50 * (index + 1);
-              layer.style.transform = `translateY(${scrollRatio * speed}px)`;
-            });
-          }
-        }
-
-        // Scroll animations
-        const scrollAnimations = document.querySelectorAll(".scroll-animation");
-        scrollAnimations.forEach((element) => {
-          const elementTop = element.getBoundingClientRect().top;
-          if (elementTop < window.innerHeight * 0.85) {
-            element.classList.add("active");
-          }
-        });
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
