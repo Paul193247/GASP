@@ -222,54 +222,59 @@
           <div class="world-map scroll-animation">
             <svg id="map-svg" viewBox="0 0 1000 500" class="map-svg">
               <image href="/weltkarte.svg" x="0" y="0" width="1000" height="500" />
-              <!-- Beispiel: Echte Länderumrisse als Pfade -->
+              <!-- Europa -->
               <path
                 id="europa"
                 class="map-region"
-                d="M...echter SVG-Pfad für Europa..."
+                data-region="europa"
                 fill="#003399"
                 fill-opacity="0.5"
-                data-region="europa"
+                d="M 480 180 L 520 170 L 540 200 L 500 210 Z"
               />
+              <!-- Nordamerika -->
               <path
                 id="nordamerika"
                 class="map-region"
-                d="M...echter SVG-Pfad für Nordamerika..."
+                data-region="nordamerika"
                 fill="#666"
                 fill-opacity="0.5"
-                data-region="nordamerika"
+                d="M 120 80 L 300 60 L 320 180 L 180 200 Z"
               />
+              <!-- Asien -->
               <path
                 id="asien"
                 class="map-region"
-                d="M800,180 l60,0 l0,40 l-60,0 z"
+                data-region="asien"
                 fill="#666"
                 fill-opacity="0.5"
-                data-region="asien"
+                d="M 700 100 L 950 120 L 900 300 L 750 250 Z"
               />
+              <!-- Afrika -->
               <path
                 id="afrika"
                 class="map-region"
-                d="M550,310 l40,0 l0,40 l-40,0 z"
+                data-region="afrika"
                 fill="#666"
                 fill-opacity="0.5"
-                data-region="afrika"
+                d="M 520 250 L 600 260 L 590 400 L 530 390 Z"
               />
+              <!-- Südamerika -->
               <path
                 id="suedamerika"
                 class="map-region"
-                d="M330,360 l20,0 l0,20 l-20,0 z"
+                data-region="suedamerika"
                 fill="#666"
                 fill-opacity="0.5"
-                data-region="suedamerika"
+                d="M 320 320 L 400 350 L 370 470 L 310 440 Z"
               />
+              <!-- Ozeanien -->
               <path
                 id="ozeanien"
                 class="map-region"
-                d="M920,390 l20,0 l0,20 l-20,0 z"
+                data-region="ozeanien"
                 fill="#666"
                 fill-opacity="0.5"
-                data-region="ozeanien"
+                d="M 900 400 L 980 420 L 970 480 L 910 460 Z"
               />
             </svg>
           </div>
