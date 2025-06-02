@@ -215,62 +215,61 @@
       <div class="container">
         <h2 class="section-title scroll-animation">GASP in der Welt</h2>
         <div class="map-container">
+          <div class="map-controls">
+            <button id="zoom-in" aria-label="Reinzoomen">+</button>
+            <button id="zoom-out" aria-label="Rauszoomen">−</button>
+          </div>
           <div class="world-map scroll-animation">
-            <svg viewBox="0 0 1000 500" class="map-svg">
+            <svg id="map-svg" viewBox="0 0 1000 500" class="map-svg">
               <!-- Weltkarte als Hintergrund -->
               <image href="/weltkarte.svg" x="0" y="0" width="1000" height="500" />
-              <!-- Europa -->
-              <circle
-                cx="570"
-                cy="180"
-                r="30"
-                fill="#003399"
+              <!-- Beispielhafte Länderflächen als Pfade (statt Kreise) -->
+              <path
+                id="europa"
                 class="map-region"
+                d="M560,170 l60,0 l0,40 l-60,0 z"
+                fill="#003399"
+                fill-opacity="0.5"
                 data-region="europa"
               />
-              <!-- Nordamerika -->
-              <circle
-                cx="220"
-                cy="170"
-                r="25"
-                fill="#666"
+              <path
+                id="nordamerika"
                 class="map-region"
+                d="M200,150 l50,0 l0,40 l-50,0 z"
+                fill="#666"
+                fill-opacity="0.5"
                 data-region="nordamerika"
               />
-              <!-- Asien -->
-              <circle
-                cx="820"
-                cy="200"
-                r="35"
-                fill="#666"
+              <path
+                id="asien"
                 class="map-region"
+                d="M800,180 l60,0 l0,40 l-60,0 z"
+                fill="#666"
+                fill-opacity="0.5"
                 data-region="asien"
               />
-              <!-- Afrika -->
-              <circle
-                cx="570"
-                cy="320"
-                r="30"
-                fill="#666"
+              <path
+                id="afrika"
                 class="map-region"
+                d="M550,310 l40,0 l0,40 l-40,0 z"
+                fill="#666"
+                fill-opacity="0.5"
                 data-region="afrika"
               />
-              <!-- Südamerika -->
-              <circle
-                cx="340"
-                cy="370"
-                r="20"
-                fill="#666"
+              <path
+                id="suedamerika"
                 class="map-region"
+                d="M330,360 l20,0 l0,20 l-20,0 z"
+                fill="#666"
+                fill-opacity="0.5"
                 data-region="suedamerika"
               />
-              <!-- Ozeanien -->
-              <circle
-                cx="930"
-                cy="400"
-                r="15"
-                fill="#666"
+              <path
+                id="ozeanien"
                 class="map-region"
+                d="M920,390 l20,0 l0,20 l-20,0 z"
+                fill="#666"
+                fill-opacity="0.5"
                 data-region="ozeanien"
               />
             </svg>
