@@ -82,13 +82,28 @@
         margin: auto 0;
         display: block;
       }
+      .vergleich-text {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 3vw;
+        padding-right: 1vw;
+      }
       .vergleich-text h2 {
         font-size: 2.5rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.2rem;
+        margin-top: 0;
+        width: 100%;
+        text-align: left;
+        order: 0; /* Überschrift immer oben */
       }
       .vergleich-text p {
         font-size: 1.2rem;
         color: #525252;
+        margin: 0;
+        width: 100%;
+        text-align: left;
+        order: 1; /* Text immer unter der Überschrift */
       }
       /* Wechsel Layout für gerade/ungerade Abschnitte */
       .reverse {
