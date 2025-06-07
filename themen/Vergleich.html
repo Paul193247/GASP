@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vergleich der GASP mit anderen Außenpolitiken</title>
+    <link rel="stylesheet" href="../v0-style.css" />
+    <style>
+      /* Parallax-Bild für diese Seite */
+      .vergleich-parallax {
+        position: relative;
+        height: 60vh;
+        min-height: 320px;
+        overflow: hidden;
+        margin-top: 70px;
+        background: linear-gradient(120deg, #e0e7ff 0%, #f0f0f0 100%);
+      }
+      .vergleich-parallax .parallax-layer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        will-change: transform;
+        background-image: url('/placeholder.svg?height=400&width=1200&text=Vergleich');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.25;
+        z-index: 1;
+      }
+      .vergleich-parallax .parallax-content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .vergleich-parallax h1 {
+        font-size: 3rem;
+        color: #222;
+        background: rgba(255,255,255,0.85);
+        padding: 24px 48px;
+        border-radius: 24px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+        text-align: center;
+        letter-spacing: -1px;
+      }
+
+      /* Scroll Snap Bereich */
+      .snap-outer {
+        scroll-snap-type: y mandatory;
+        overflow-y: auto;
+        max-height: 100vh;
+      }
+      .snap-section {
+        scroll-snap-align: start;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f0f0f0;
+        transition: background 0.3s;
+      }
+      .snap-section.alt {
+        background: #e0e0e0;
+      }
+      .snap-section .container {
+        max-width: 900px;
+        text-align: center;
+      }
+      .snap-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .snap-section p {
+        font-size: 1.2rem;
+        color: #525252;
+      }
+      /* Responsive Anpassung */
+      @media (max-width: 700px) {
+        .vergleich-parallax h1 { font-size: 2rem; padding: 16px 10px; }
+        .snap-section h2 { font-size: 1.5rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <div class="logo">GASP</div>
+          <ul class="nav-links">
+            <li><a href="../v0.html#overview">Übersicht</a></li>
+            <li><a href="../v0.html#institutions">Institutionen</a></li>
+            <li><a href="../v0.html#instruments">Instrumente</a></li>
+            <li><a href="../v0.html#challenges">Herausforderungen</a></li>
+            <li><a href="../v0.html#missions">Missionen</a></li>
+            <li><a href="../v0.html#future">Zukunft</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="vergleich-parallax">
+      <div class="parallax-layer"></div>
+      <div class="parallax-content">
+        <h1>Vergleich: GASP &amp; andere Außenpolitiken</h1>
+      </div>
+    </section>
+
+    <main>
+      <div class="snap-outer">
+        <section class="snap-section">
+          <div class="container scroll-animation">
+            <h2>Was ist die GASP?</h2>
+            <p>
+              Die Gemeinsame Außen- und Sicherheitspolitik (GASP) ist der außenpolitische Rahmen der EU. Sie koordiniert die außenpolitischen Maßnahmen der Mitgliedsstaaten und strebt eine gemeinsame Stimme in der Welt an.
+            </p>
+          </div>
+        </section>
+        <section class="snap-section alt">
+          <div class="container scroll-animation">
+            <h2>Vergleich: GASP vs. USA Außenpolitik</h2>
+            <p>
+              Während die GASP auf Konsens und multilaterale Zusammenarbeit setzt, agiert die US-Außenpolitik oft schneller und unilateral. Die EU benötigt Einstimmigkeit, die USA können durch Exekutiventscheidungen rascher handeln.
+            </p>
+          </div>
+        </section>
+        <section class="snap-section">
+          <div class="container scroll-animation">
+            <h2>Vergleich: GASP vs. Russische Außenpolitik</h2>
+            <p>
+              Die russische Außenpolitik ist stark zentralisiert und verfolgt nationale Interessen. Die GASP hingegen ist auf Kompromiss und Werte wie Demokratie und Menschenrechte ausgerichtet.
+            </p>
+          </div>
+        </section>
+        <section class="snap-section alt">
+          <div class="container scroll-animation">
+            <h2>Fazit</h2>
+            <p>
+              Die GASP unterscheidet sich durch ihre multilaterale, konsensorientierte Struktur deutlich von anderen Großmächten. Ihre Stärke liegt in der Legitimation durch viele Staaten, ihre Schwäche in der Geschwindigkeit der Entscheidungsfindung.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Themen</h3>
+            <ul class="footer-links">
+              <li><a href="../v0.html#overview">Überblick</a></li>
+              <li><a href="../v0.html#institutions">Institutionen</a></li>
+              <li><a href="../v0.html#instruments">Instrumente</a></li>
+              <li><a href="../v0.html#challenges">Herausforderungen</a></li>
+              <li><a href="../v0.html#missions">Missionen</a></li>
+              <li><a href="../v0.html#future">Zukunft</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Aufgabenverteilung</h3>
+            <ul class="footer-links">
+              <li><a href="../team/paul-zoerb.html">Paul Ene Zörb</a></li>
+              <li><a href="../team/jannes-ruder.html">Jannes Ruder</a></li>
+              <li><a href="../team/noah-von-minden.html">Noah von Minden</a></li>
+              <li><a href="../team/mattis-reinecker.html">Mattis Reinecker</a></li>
+              <li><a href="../team/thor-hagen-standke.html">Thor Hagen Standke</a></li>
+              <li><a href="../team/alexander-tobaben.html">Alexander Tobaben</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Ressourcen</h3>
+            <ul class="footer-links">
+              <li><a href="../sources.html">Quellen</a></li>
+              <li><a href="../v0.html#overview">Übersicht</a></li>
+              <li><a href="../v0.html#institutions">Institutionen</a></li>
+              <li><a href="../v0.html#world-map">Weltkarte</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Projekt</h3>
+            <ul class="footer-links">
+              <li><a href="#">Politik Klassenarbeit</a></li>
+              <li><a href="#">GASP Analyse</a></li>
+              <li><a href="#">Gruppenprojekt</a></li>
+              <li><a href="#">2025</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>© 2025 GASP Projekt - Politik Klassenarbeit Ersatzleistung</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../v0-script.js"></script>
+  </body>
+</html>
