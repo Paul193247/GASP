@@ -47,7 +47,7 @@
         display: flex;
         width: 100vw;
         max-width: 100vw;
-        /* Höhe automatisch nach Inhalt, nicht 100vh */
+        min-height: 70vh; /* Mindesthöhe wie vorher */
         height: auto;
         align-items: stretch;
       }
@@ -58,8 +58,21 @@
         justify-content: center;
         min-width: 0;
         min-height: 0;
-        /* Weniger Abstand zur Mitte */
         padding: 0;
+        /* Beide Seiten gehen bis zur Mitte, mit klarer Trennung */
+        border-right: 2px solid #e0e0e0;
+      }
+      .vergleich-img {
+        border-right: none;
+        border-left: 2px solid #e0e0e0;
+      }
+      .reverse .vergleich-text {
+        border-right: none;
+        border-left: 2px solid #e0e0e0;
+      }
+      .reverse .vergleich-img {
+        border-left: none;
+        border-right: 2px solid #e0e0e0;
       }
       .vergleich-text {
         padding-left: 3vw;
@@ -73,7 +86,6 @@
         padding-left: 1vw;
         justify-content: center;
         align-items: stretch;
-        /* Bild immer so hoch wie Text */
         display: flex;
         flex-direction: column;
       }
@@ -104,7 +116,8 @@
       @media (max-width: 900px) {
         .vergleich-grid {
           flex-direction: column !important;
-          height: auto;
+          min-height: 40vh;
+          border: none;
         }
         .vergleich-text, .vergleich-img {
           flex: unset;
@@ -113,6 +126,7 @@
           padding: 3vw 6vw;
           justify-content: flex-start;
           align-items: center;
+          border: none;
         }
         .vergleich-img {
           padding-bottom: 6vw;
