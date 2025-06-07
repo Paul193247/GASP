@@ -1,0 +1,112 @@
+body {
+  color: #fff;
+  font-family: sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.world-map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: max-content;
+  height: max-content;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+svg {
+  width: 100vw;
+  height: 100vh;
+}
+
+path {
+  fill: #443d4b;
+  stroke: #dcbfff;
+  transition: 100ms;
+}
+
+.side-panel {
+  position: fixed;
+  background-color: #1d1a20;
+  padding: 2em;
+  top: 0;
+  right: -30em;
+  width: 100%;
+  max-width: 30em;
+  height: 100vh;
+  overflow: scroll;
+  transition: 600ms cubic-bezier(0.77, 0, 0, 18, 1);
+  z-index: 1;
+}
+
+.side-panel .container {
+  padding-block: 2em;
+  transition: 200ms ease-out;
+}
+
+.side-panel-open {
+  right: 0;
+}
+.hide {
+  opacity: 0;
+}
+
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3em;
+  height: 3em;
+  border: none;
+  background-color: #443d4d;
+  color: #fff;
+  cursor: pointer;
+  transition: 100ms;
+}
+
+.close-button i {
+  font-size: 2em;
+}
+
+.close-button:hover {
+  background-color: #c99aff;
+}
+
+.zoom-controls {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+}
+
+.zoom-controls button {
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+  border: 1px #dcbfff solid;
+  background-color: #443d4d;
+  color: #fff;
+  cursor: pointer;
+  font-size: 2em;
+}
+
+.zoom-controls button:hover {
+  background-color: #c99aff;
+}
+
+button:disabled {
+  background-color: #1d1a20;
+  color: #333;
+  cursor: default;
+  border: 1px #443d4b solid;
+}
+
+.zoom-out {
+  margin-bottom: 10px;
+}
