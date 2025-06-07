@@ -6,7 +6,6 @@
     <title>Vergleich der GASP mit anderen Außenpolitiken</title>
     <link rel="stylesheet" href="../v0-style.css" />
     <style>
-      /* Parallax-Bild für diese Seite */
       .vergleich-parallax {
         position: relative;
         height: 60vh;
@@ -45,17 +44,17 @@
         letter-spacing: -1px;
       }
 
-      /* Scroll Snap Bereich */
+      /* Snap Bereich */
       .snap-outer {
-        scroll-snap-type: y mandatory;
+        scroll-snap-type: y proximity;
         overflow-y: auto;
-        max-height: 100vh;
+        max-height: none;
       }
       .snap-section {
         scroll-snap-align: start;
         min-height: 100vh;
         display: flex;
-        align-items: center;
+        align-items: stretch;
         justify-content: center;
         background: #f0f0f0;
         transition: background 0.3s;
@@ -63,22 +62,76 @@
       .snap-section.alt {
         background: #e0e0e0;
       }
-      .snap-section .container {
-        max-width: 900px;
-        text-align: center;
+      .vergleich-grid {
+        display: flex;
+        width: 100vw;
+        max-width: 100vw;
+        height: 100vh;
       }
-      .snap-section h2 {
+      .vergleich-text, .vergleich-img {
+        flex: 1 1 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        min-width: 0;
+        min-height: 0;
+      }
+      .vergleich-text {
+        padding-left: 5vw;
+        padding-right: 2vw;
+        text-align: left;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .vergleich-img {
+        padding-right: 5vw;
+        padding-left: 2vw;
+        justify-content: center;
+        align-items: center;
+      }
+      .vergleich-img img {
+        max-width: 90%;
+        max-height: 70vh;
+        border-radius: 24px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+        object-fit: cover;
+        background: #fff;
+      }
+      .vergleich-text h2 {
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
       }
-      .snap-section p {
+      .vergleich-text p {
         font-size: 1.2rem;
         color: #525252;
       }
-      /* Responsive Anpassung */
+      /* Wechsel Layout für gerade/ungerade Abschnitte */
+      .reverse {
+        flex-direction: row-reverse;
+      }
+      /* Responsive */
+      @media (max-width: 900px) {
+        .vergleich-grid {
+          flex-direction: column !important;
+          height: auto;
+        }
+        .vergleich-text, .vergleich-img {
+          flex: unset;
+          width: 100vw;
+          min-height: 40vh;
+          padding: 4vw 6vw;
+          justify-content: flex-start;
+        }
+        .vergleich-img {
+          justify-content: center;
+          padding-bottom: 6vw;
+        }
+      }
       @media (max-width: 700px) {
         .vergleich-parallax h1 { font-size: 2rem; padding: 16px 10px; }
-        .snap-section h2 { font-size: 1.5rem; }
+        .vergleich-text h2 { font-size: 1.5rem; }
+        .vergleich-text, .vergleich-img { padding: 6vw 2vw; }
       }
     </style>
   </head>
@@ -108,36 +161,60 @@
 
     <main>
       <div class="snap-outer">
+        <!-- Abschnitt 1 -->
         <section class="snap-section">
-          <div class="container scroll-animation">
-            <h2>Was ist die GASP?</h2>
-            <p>
-              Die Gemeinsame Außen- und Sicherheitspolitik (GASP) ist der außenpolitische Rahmen der EU. Sie koordiniert die außenpolitischen Maßnahmen der Mitgliedsstaaten und strebt eine gemeinsame Stimme in der Welt an.
-            </p>
+          <div class="vergleich-grid">
+            <div class="vergleich-text scroll-animation">
+              <h2>Was ist die GASP?</h2>
+              <p>
+                Die Gemeinsame Außen- und Sicherheitspolitik (GASP) ist der außenpolitische Rahmen der EU. Sie koordiniert die außenpolitischen Maßnahmen der Mitgliedsstaaten und strebt eine gemeinsame Stimme in der Welt an.
+              </p>
+            </div>
+            <div class="vergleich-img">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/512px-Flag_of_Europe.svg.png" alt="EU Flagge" />
+            </div>
           </div>
         </section>
+        <!-- Abschnitt 2 -->
         <section class="snap-section alt">
-          <div class="container scroll-animation">
-            <h2>Vergleich: GASP vs. USA Außenpolitik</h2>
-            <p>
-              Während die GASP auf Konsens und multilaterale Zusammenarbeit setzt, agiert die US-Außenpolitik oft schneller und unilateral. Die EU benötigt Einstimmigkeit, die USA können durch Exekutiventscheidungen rascher handeln.
-            </p>
+          <div class="vergleich-grid reverse">
+            <div class="vergleich-text scroll-animation">
+              <h2>GASP vs. USA Außenpolitik</h2>
+              <p>
+                Während die GASP auf Konsens und multilaterale Zusammenarbeit setzt, agiert die US-Außenpolitik oft schneller und unilateral. Die EU benötigt Einstimmigkeit, die USA können durch Exekutiventscheidungen rascher handeln.
+              </p>
+            </div>
+            <div class="vergleich-img">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="USA Flagge" />
+            </div>
           </div>
         </section>
+        <!-- Abschnitt 3 -->
         <section class="snap-section">
-          <div class="container scroll-animation">
-            <h2>Vergleich: GASP vs. Russische Außenpolitik</h2>
-            <p>
-              Die russische Außenpolitik ist stark zentralisiert und verfolgt nationale Interessen. Die GASP hingegen ist auf Kompromiss und Werte wie Demokratie und Menschenrechte ausgerichtet.
-            </p>
+          <div class="vergleich-grid">
+            <div class="vergleich-text scroll-animation">
+              <h2>GASP vs. Russische Außenpolitik</h2>
+              <p>
+                Die russische Außenpolitik ist stark zentralisiert und verfolgt nationale Interessen. Die GASP hingegen ist auf Kompromiss und Werte wie Demokratie und Menschenrechte ausgerichtet.
+              </p>
+            </div>
+            <div class="vergleich-img">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg" alt="Russische Flagge" />
+            </div>
           </div>
         </section>
+        <!-- Abschnitt 4 -->
         <section class="snap-section alt">
-          <div class="container scroll-animation">
-            <h2>Fazit</h2>
-            <p>
-              Die GASP unterscheidet sich durch ihre multilaterale, konsensorientierte Struktur deutlich von anderen Großmächten. Ihre Stärke liegt in der Legitimation durch viele Staaten, ihre Schwäche in der Geschwindigkeit der Entscheidungsfindung.
-            </p>
+          <div class="vergleich-grid reverse">
+            <div class="vergleich-text scroll-animation">
+              <h2>Fazit</h2>
+              <p>
+                Die GASP unterscheidet sich durch ihre multilaterale, konsensorientierte Struktur deutlich von anderen Großmächten. Ihre Stärke liegt in der Legitimation durch viele Staaten, ihre Schwäche in der Geschwindigkeit der Entscheidungsfindung.
+              </p>
+            </div>
+            <div class="vergleich-img">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Globe_icon.svg" alt="Globus" />
+            </div>
           </div>
         </section>
       </div>
