@@ -1,4 +1,4 @@
-// Simple parallax effect
+// Enhanced parallax effect
 document.addEventListener("scroll", function () {
   const layers = document.querySelectorAll(".parallax-layer");
   const scrollPosition = window.pageYOffset;
@@ -7,26 +7,6 @@ document.addEventListener("scroll", function () {
     const speed = 0.1 * (index + 1);
     layer.style.transform = `translateY(${scrollPosition * speed}px)`;
   });
-
-  // Parallax effect for parataxe section
-  const parataxeLayers = document.querySelectorAll(".parataxe-layer");
-  const parataxeSection = document.querySelector(".parataxe-section");
-
-  if (parataxeSection) {
-    const parataxeTop = parataxeSection.getBoundingClientRect().top;
-    const parataxeHeight = parataxeSection.offsetHeight;
-
-    if (parataxeTop < window.innerHeight && parataxeTop > -parataxeHeight) {
-      const scrollRatio =
-        (window.innerHeight - parataxeTop) /
-        (window.innerHeight + parataxeHeight);
-
-      parataxeLayers.forEach((layer, index) => {
-        const speed = 50 * (index + 1);
-        layer.style.transform = `translateY(${scrollRatio * speed}px)`;
-      });
-    }
-  }
 
   // Scroll animations
   const scrollAnimations = document.querySelectorAll(".scroll-animation");
@@ -38,36 +18,69 @@ document.addEventListener("scroll", function () {
   });
 });
 
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  });
+});
+
+// Enhanced chart animation
 document.addEventListener("DOMContentLoaded", function () {
-  const svg = document.getElementById("map-svg");
-  let zoom = 1;
-  const minZoom = 1;
-  const maxZoom = 3;
+  const chartBars = document.querySelectorAll(".bar");
 
-  document.getElementById("zoom-in").onclick = function () {
-    if (zoom < maxZoom) {
-      zoom += 0.2;
-      svg.style.transform = `scale(${zoom})`;
-    }
-  };
-  document.getElementById("zoom-out").onclick = function () {
-    if (zoom > minZoom) {
-      zoom -= 0.2;
-      svg.style.transform = `scale(${zoom})`;
-    }
+  const animateChart = () => {
+    chartBars.forEach((bar, index) => {
+      setTimeout(() => {
+        bar.style.transform = "scaleY(1)";
+        bar.style.transformOrigin = "bottom";
+      }, index * 200);
+    });
   };
 
-  // Highlight-Logik
-  const regions = svg.querySelectorAll(".map-region");
-  regions.forEach(region => {
-    region.addEventListener("click", function () {
-      regions.forEach(r => r.classList.remove("highlighted"));
-      this.classList.add("highlighted");
-      // Optional: Info-Text anpassen
-      document.getElementById("region-info").innerHTML = `
-        <h3>${this.dataset.region.charAt(0).toUpperCase() + this.dataset.region.slice(1)}</h3>
-        <p>[Platzhaltertext] Informationen zu GASP-Aktivitäten in dieser Region.</p>
-      `;
+  // Trigger animation when chart comes into view
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateChart();
+        observer.unobserve(entry.target);
+      }
     });
   });
+
+  const chartContainer = document.querySelector(".chart-placeholder");
+  if (chartContainer) {
+    observer.observe(chartContainer);
+  }
+});
+
+// Header background on scroll
+window.addEventListener("scroll", function () {
+  const header = document.querySelector("header");
+  if (window.scrollY > 100) {
+    header.style.backgroundColor = "rgba(255, 255, 255, 0.98)";
+  } else {
+    header.style.backgroundColor = "rgba(255, 255, 255, 0.95)";
+  }
+});
+
+const headline = document.querySelector(".headline1");
+const headline2 = document.querySelector(".headline2");
+const description = document.querySelector(".description1");
+const description2 = document.querySelector(".description2");
+
+window.addEventListener("message", function (event) {
+  if (event.data?.type === "countrySelected") {
+    headline.textContent = event.data.headline1;
+    headline2.textContent = event.data.headline2;
+    description.textContent = event.data.description1;
+    description2.textContent = event.data.description2;
+  }
 });
