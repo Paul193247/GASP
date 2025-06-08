@@ -6,72 +6,88 @@
     <title>Geschichte der GASP</title>
     <link rel="stylesheet" href="../v0-style.css" />
     <style>
-      /* Zeitstrahl-Stil */
-      .timeline {
-        position: relative;
-        margin: 80px auto;
-        padding: 0 0 40px 0;
-        max-width: 900px;
+      /* Seitlicher Zeitstrahl */
+      .timeline-horizontal {
+        display: flex;
+        align-items: flex-end;
+        overflow-x: auto;
+        padding: 60px 0 40px 0;
+        margin: 80px auto 0 auto;
+        max-width: 100vw;
+        scrollbar-width: thin;
       }
-      .timeline::before {
-        content: "";
+      .timeline-horizontal::-webkit-scrollbar {
+        height: 8px;
+      }
+      .timeline-horizontal::-webkit-scrollbar-thumb {
+        background: #00339933;
+        border-radius: 4px;
+      }
+      .timeline-horizontal-track {
         position: absolute;
-        left: 32px;
-        top: 0;
-        width: 4px;
-        height: 100%;
+        left: 0;
+        right: 0;
+        height: 4px;
         background: #003399;
         border-radius: 2px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 0;
       }
-      .timeline-event {
+      .timeline-event-horizontal {
         position: relative;
-        margin-bottom: 60px;
-        padding-left: 80px;
-        min-height: 60px;
+        min-width: 220px;
+        max-width: 260px;
+        margin-right: 60px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
-      .timeline-event:last-child {
-        margin-bottom: 0;
+      .timeline-event-horizontal:last-child {
+        margin-right: 0;
       }
-      .timeline-dot {
-        position: absolute;
-        left: 20px;
-        top: 0;
-        width: 24px;
-        height: 24px;
+      .timeline-dot-horizontal {
+        width: 28px;
+        height: 28px;
         background: #fff;
         border: 4px solid #003399;
         border-radius: 50%;
         z-index: 2;
+        margin-bottom: 16px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       }
-      .timeline-date {
+      .timeline-date-horizontal {
         font-weight: bold;
         color: #003399;
-        margin-bottom: 4px;
+        margin-bottom: 8px;
         font-size: 1.1em;
+        text-align: center;
       }
-      .timeline-content {
+      .timeline-content-horizontal {
         background: #f0f0f0;
         border-radius: 12px;
-        padding: 18px 24px;
+        padding: 18px 18px;
         box-shadow: 0 4px 16px rgba(0,0,0,0.04);
         transition: background 0.2s;
+        text-align: center;
+        min-height: 80px;
       }
-      .timeline-event:hover .timeline-content {
+      .timeline-event-horizontal:hover .timeline-content-horizontal {
         background: #e0e7ff;
       }
-      @media (max-width: 600px) {
-        .timeline {
-          padding-left: 0;
+      @media (max-width: 700px) {
+        .timeline-horizontal {
+          padding: 40px 0 20px 0;
         }
-        .timeline-event {
-          padding-left: 56px;
+        .timeline-event-horizontal {
+          min-width: 160px;
+          max-width: 180px;
+          margin-right: 24px;
         }
-        .timeline-dot {
-          left: 0;
-        }
-        .timeline::before {
-          left: 12px;
+        .timeline-content-horizontal {
+          font-size: 0.95em;
+          padding: 12px 8px;
         }
       }
     </style>
@@ -105,63 +121,64 @@
     </section>
 
     <section class="content-section">
-      <div class="container">
+      <div class="container" style="position:relative;">
         <h2 class="section-title scroll-animation">Chronologischer Zeitstrahl</h2>
-        <div class="timeline">
-          <div class="timeline-event scroll-animation">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">1948</div>
-              <div>Gründung der Westeuropäischen Union (WEU) als Vorläufer gemeinsamer europäischer Sicherheitsstrukturen.</div>
+        <div class="timeline-horizontal" style="position:relative;">
+          <div class="timeline-horizontal-track" style="position:absolute; left:0; right:0; height:4px; background:#003399; border-radius:2px; top:50%; transform:translateY(-50%); z-index:0;"></div>
+          <div class="timeline-event-horizontal scroll-animation">
+            <div class="timeline-dot-horizontal"></div>
+            <div class="timeline-date-horizontal">1948</div>
+            <div class="timeline-content-horizontal">
+              Gründung der Westeuropäischen Union (WEU) als Vorläufer gemeinsamer europäischer Sicherheitsstrukturen.
             </div>
           </div>
-          <div class="timeline-event scroll-animation">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">1970</div>
-              <div>Start der Europäischen Politischen Zusammenarbeit (EPZ) – erster Versuch einer gemeinsamen Außenpolitik der EG-Staaten.</div>
+          <div class="timeline-event-horizontal scroll-animation">
+            <div class="timeline-dot-horizontal"></div>
+            <div class="timeline-date-horizontal">1970</div>
+            <div class="timeline-content-horizontal">
+              Start der Europäischen Politischen Zusammenarbeit (EPZ) – erster Versuch einer gemeinsamen Außenpolitik der EG-Staaten.
             </div>
           </div>
-          <div class="timeline-event scroll-animation">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">1992</div>
-              <div>Vertrag von Maastricht: Die GASP wird als zweite Säule der Europäischen Union offiziell eingeführt.</div>
+          <div class="timeline-event-horizontal scroll-animation">
+            <div class="timeline-dot-horizontal"></div>
+            <div class="timeline-date-horizontal">1992</div>
+            <div class="timeline-content-horizontal">
+              Vertrag von Maastricht: Die GASP wird als zweite Säule der Europäischen Union offiziell eingeführt.
             </div>
           </div>
-          <div class="timeline-event scroll-animation">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">1999</div>
-              <div>Vertrag von Amsterdam: Stärkung der GASP, Einführung des Amtes des Hohen Vertreters für die GASP.</div>
+          <div class="timeline-event-horizontal scroll-animation">
+            <div class="timeline-dot-horizontal"></div>
+            <div class="timeline-date-horizontal">1999</div>
+            <div class="timeline-content-horizontal">
+              Vertrag von Amsterdam: Stärkung der GASP, Einführung des Amtes des Hohen Vertreters für die GASP.
             </div>
           </div>
-          <div class="timeline-event scroll-animation">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">2003</div>
-              <div>Europäische Sicherheitsstrategie wird verabschiedet. Beginn erster EU-Missionen im Rahmen der GASP.</div>
+          <div class="timeline-event-horizontal scroll-animation">
+            <div class="timeline-dot-horizontal"></div>
+            <div class="timeline-date-horizontal">2003</div>
+            <div class="timeline-content-horizontal">
+              Europäische Sicherheitsstrategie wird verabschiedet. Beginn erster EU-Missionen im Rahmen der GASP.
             </div>
           </div>
-          <div class="timeline-event scroll-animation">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">2009</div>
-              <div>Vertrag von Lissabon: Die GASP wird weiterentwickelt, der Europäische Auswärtige Dienst (EAD) entsteht.</div>
+          <div class="timeline-event-horizontal scroll-animation">
+            <div class="timeline-dot-horizontal"></div>
+            <div class="timeline-date-horizontal">2009</div>
+            <div class="timeline-content-horizontal">
+              Vertrag von Lissabon: Die GASP wird weiterentwickelt, der Europäische Auswärtige Dienst (EAD) entsteht.
             </div>
           </div>
-          <div class="timeline-event scroll-animation">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">2016</div>
-              <div>Verabschiedung der „Globalen Strategie für die Außen- und Sicherheitspolitik der EU“.</div>
+          <div class="timeline-event-horizontal scroll-animation">
+            <div class="timeline-dot-horizontal"></div>
+            <div class="timeline-date-horizontal">2016</div>
+            <div class="timeline-content-horizontal">
+              Verabschiedung der „Globalen Strategie für die Außen- und Sicherheitspolitik der EU“.
             </div>
           </div>
-          <div class="timeline-event scroll-animation">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">2022–2024</div>
-              <div>Aktuelle Herausforderungen: Ukraine-Krieg, neue Missionen und Anpassung der GASP an globale Krisen.</div>
+          <div class="timeline-event-horizontal scroll-animation">
+            <div class="timeline-dot-horizontal"></div>
+            <div class="timeline-date-horizontal">2022–2024</div>
+            <div class="timeline-content-horizontal">
+              Aktuelle Herausforderungen: Ukraine-Krieg, neue Missionen und Anpassung der GASP an globale Krisen.
             </div>
           </div>
         </div>
