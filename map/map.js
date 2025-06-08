@@ -105,10 +105,6 @@ const countrydata_civil = {
     description:
       "Die EUAM RCA (European Union Advisory Mission in the Central African Republic) ist eine militärische Beratungsmission in Zentralafrika. Sie startete am 16. März 2015 als Nachfolgemission der EUFOR RCA (European Union Force Central African Republic) und läuft noch bis zum 07. August 2026. Ziel der Mission ist die Reformation der Zentralafrikanischen Streitkräfte. Ein Fokus liegt außerdem auf Geschlechtergleichstellung und Integration der Menschenrechte.",
   },
-  GN: {
-    headline: "EU SDI GOG",
-    description: "",
-  },
 };
 
 countries.forEach((country) => {
