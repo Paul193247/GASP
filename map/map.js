@@ -1,17 +1,8 @@
 const map = document.querySelector("svg");
 const countries = document.querySelectorAll("path");
-const sidePanel = document.querySelector(".side-panel");
-const container = document.querySelector(".side-panel .container");
-const closeBtn = document.querySelector(".close-button");
 const zoomInBtn = document.querySelector(".zoom-in");
 const zoomOutBtn = document.querySelector(".zoom-out");
 const zoomValue = document.querySelector(".zoom-value");
-
-const headline = document.querySelector(".headline");
-const description = document.querySelector(".text");
-const headline2 = document.querySelector(".headline2");
-const description2 = document.querySelector(".text2");
-
 const countrydata_military = {
   BA: {
     //
@@ -134,21 +125,7 @@ countries.forEach((country) => {
     });
     country.addEventListener("click", function () {
       const data = countrydata_military[this.id];
-      headline.textContent = "";
-      description.textContent = "";
-      headline2.textContent = "";
-      description2.textContent = "";
-      if (data) {
-        headline.textContent = data.headline;
-        description.textContent = data.description;
-      }
       const dataCivil = countrydata_civil[this.id];
-      if (dataCivil) {
-        headline2.textContent = dataCivil.headline;
-        description2.textContent = dataCivil.description;
-      }
-      sidePanel.classList.add("side-panel-open");
-      console.log("test");
       window.parent.postMessage(
         {
           type: "countrySelected",
@@ -164,10 +141,6 @@ countries.forEach((country) => {
   country.addEventListener("click", function () {
     console.log(this.id);
   });
-});
-
-closeBtn.addEventListener("click", function () {
-  sidePanel.classList.remove("side-panel-open");
 });
 
 let zoomLevel = 100;

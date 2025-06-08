@@ -71,9 +71,16 @@ window.addEventListener("scroll", function () {
   }
 });
 
+const headline = document.querySelector(".headline1");
+const headline2 = document.querySelector(".headline2");
+const description = document.querySelector(".description1");
+const description2 = document.querySelector(".description2");
+
 window.addEventListener("message", function (event) {
   if (event.data?.type === "countrySelected") {
-    document.getElementById("headline").textContent = event.data.headline;
-    document.getElementById("description").textContent = event.data.description;
+    headline.textContent = event.data.headline1;
+    headline2.textContent = event.data.headline2;
+    description.textContent = event.data.description1;
+    description2.textContent = event.data.description2;
   }
 });
