@@ -720,3 +720,36 @@ button:focus {
     max-height: 30vh;
   }
 }
+
+
+#comparison .snap-outer,
+#comparison .vergleich-grid {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+  box-sizing: border-box;
+}
+
+#comparison .vergleich-img img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+
+#comparison {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Für kleinere Bildschirme */
+@media (max-width: 700px) {
+  #comparison .snap-outer,
+  #comparison .vergleich-grid {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}

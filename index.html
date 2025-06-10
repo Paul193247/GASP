@@ -662,33 +662,31 @@
       let timelineLockActive = false;
       let timelineLockY = 0;
 
-      // Hilfsfunktion: Timeline-Section vertikal mittig im Viewport?
-      function isTimelineSectionCentered() {
-        const section = timeline.closest('.content-section');
-        const rect = section.getBoundingClientRect();
+      // Hilfsfunktion: Timeline-Mitte im Viewport?
+      function isTimelineCenterInView() {
+        const rect = timeline.getBoundingClientRect();
         const center = rect.top + rect.height / 2;
         return center > window.innerHeight / 2 - 10 && center < window.innerHeight / 2 + 10;
       }
 
-      // Finde die Y-Position, bei der die Timeline-Section mittig ist
-      function getTimelineSectionCenterY() {
-        const section = timeline.closest('.content-section');
-        const rect = section.getBoundingClientRect();
+      // Finde die Y-Position, bei der die Timeline mittig ist
+      function getTimelineCenterY() {
+        const rect = timeline.getBoundingClientRect();
         const scrollY = window.scrollY;
-        const sectionTop = rect.top + scrollY;
-        const sectionCenter = sectionTop + rect.height / 2;
-        return sectionCenter - window.innerHeight / 2;
+        const timelineTop = rect.top + scrollY;
+        const timelineCenter = timelineTop + rect.height / 2;
+        return timelineCenter - window.innerHeight / 2;
       }
 
       // Lock-Mechanismus: Seite bleibt stehen, Timeline scrollt horizontal
       window.addEventListener('scroll', function() {
-        if (!timelineLockActive && isTimelineSectionCentered()) {
+        if (!timelineLockActive && isTimelineCenterInView()) {
           timelineLockActive = true;
-          timelineLockY = getTimelineSectionCenterY();
+          timelineLockY = getTimelineCenterY();
           window.scrollTo({ top: timelineLockY });
         }
-        // Wenn Section nicht mehr mittig ist, Lock deaktivieren
-        if (timelineLockActive && !isTimelineSectionCentered()) {
+        // Wenn Timeline nicht mehr mittig ist (z.B. nach unlock), Lock deaktivieren
+        if (timelineLockActive && !isTimelineCenterInView()) {
           timelineLockActive = false;
         }
       });
@@ -719,11 +717,11 @@
         }
       }, { passive: false });
 
-      // Initialisierung: Lock aktivieren, wenn Section mittig ist
+      // Initialisierung: Lock aktivieren, wenn Timeline mittig ist
       window.addEventListener('DOMContentLoaded', function() {
-        if (isTimelineSectionCentered()) {
+        if (isTimelineCenterInView()) {
           timelineLockActive = true;
-          timelineLockY = getTimelineSectionCenterY();
+          timelineLockY = getTimelineCenterY();
           window.scrollTo({ top: timelineLockY });
         }
       });
