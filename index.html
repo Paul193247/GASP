@@ -659,48 +659,60 @@
 
     <script>
       const timeline = document.getElementById('timeline-horizontal');
-      let lastScrollY = window.scrollY;
       let isSyncing = false;
 
       function syncTimelineWithScroll() {
         if (isSyncing) return;
         isSyncing = true;
 
-        // Maximale horizontale Scrollweite der Timeline
         const maxTimelineScroll = timeline.scrollWidth - timeline.clientWidth;
-        // Maximale vertikale Scrollweite der Seite
         const maxPageScroll = document.body.scrollHeight - window.innerHeight;
-
-        // Anteil der Seite, die gescrollt wurde (0 = oben, 1 = ganz unten)
         const scrollRatio = window.scrollY / maxPageScroll;
 
-        // Setze die horizontale Scrollposition der Timeline entsprechend
         timeline.scrollLeft = scrollRatio * maxTimelineScroll;
 
         isSyncing = false;
       }
 
-      // Wenn die Seite gescrollt wird, Timeline synchronisieren
-      window.addEventListener('scroll', syncTimelineWithScroll);
+      // Blockiere das normale Scrollen, solange Timeline nicht am Ende ist
+      window.addEventListener('wheel', function(e) {
+        // Prüfe, ob Timeline im Viewport sichtbar ist
+        const rect = timeline.getBoundingClientRect();
+        const timelineVisible = rect.top < window.innerHeight && rect.bottom > 0;
 
-      // Wenn die Timeline gescrollt wird, Seite synchronisieren (nur wenn Timeline aktiv ist)
-      timeline.addEventListener('wheel', function(e) {
-        // Verhindere das Standardverhalten
-        e.preventDefault();
+        if (!timelineVisible) return; // Nur blockieren, wenn Timeline sichtbar
 
-        // Berechne neue Scrollposition
         const maxTimelineScroll = timeline.scrollWidth - timeline.clientWidth;
-        let newScrollLeft = timeline.scrollLeft + e.deltaY;
+        // Wenn Timeline noch nicht ganz rechts ist (also noch nicht am Ende)
+        if (timeline.scrollLeft < maxTimelineScroll && e.deltaY > 0) {
+          // Verhindere Seiten-Scrollen
+          e.preventDefault();
+          // Scrolle Timeline nach rechts
+          let newScrollLeft = timeline.scrollLeft + e.deltaY;
+          newScrollLeft = Math.max(0, Math.min(maxTimelineScroll, newScrollLeft));
+          timeline.scrollLeft = newScrollLeft;
 
-        // Begrenze auf die Timeline
-        newScrollLeft = Math.max(0, Math.min(maxTimelineScroll, newScrollLeft));
-        timeline.scrollLeft = newScrollLeft;
+          // Synchronisiere Seiten-Scrollposition
+          const maxPageScroll = document.body.scrollHeight - window.innerHeight;
+          const scrollRatio = newScrollLeft / maxTimelineScroll;
+          window.scrollTo(0, scrollRatio * maxPageScroll);
+        }
+        // Wenn Timeline noch nicht ganz links ist und nach oben gescrollt wird
+        else if (timeline.scrollLeft > 0 && e.deltaY < 0) {
+          e.preventDefault();
+          let newScrollLeft = timeline.scrollLeft + e.deltaY;
+          newScrollLeft = Math.max(0, Math.min(maxTimelineScroll, newScrollLeft));
+          timeline.scrollLeft = newScrollLeft;
 
-        // Synchronisiere die Seite entsprechend
-        const maxPageScroll = document.body.scrollHeight - window.innerHeight;
-        const scrollRatio = newScrollLeft / maxTimelineScroll;
-        window.scrollTo(0, scrollRatio * maxPageScroll);
+          const maxPageScroll = document.body.scrollHeight - window.innerHeight;
+          const scrollRatio = newScrollLeft / maxTimelineScroll;
+          window.scrollTo(0, scrollRatio * maxPageScroll);
+        }
+        // Wenn Timeline am Ende ist, normales Scrollen erlauben
       }, { passive: false });
+
+      // Synchronisiere Timeline, wenn Seite gescrollt wird
+      window.addEventListener('scroll', syncTimelineWithScroll);
 
       // Initial synchronisieren
       window.addEventListener('DOMContentLoaded', syncTimelineWithScroll);
