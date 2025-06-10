@@ -84,3 +84,75 @@ window.addEventListener("message", function (event) {
     description2.textContent = event.data.description2;
   }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const timeline = document.getElementById('timeline-horizontal');
+  if (!timeline) return;
+
+  let timelineLockActive = false;
+  let timelineLockY = 0;
+
+  // Hilfsfunktion: Timeline-Section vertikal mittig im Viewport?
+  function isTimelineSectionCentered() {
+    const section = timeline.closest('.content-section');
+    const rect = section.getBoundingClientRect();
+    const center = rect.top + rect.height / 2;
+    return center > window.innerHeight / 2 - 10 && center < window.innerHeight / 2 + 10;
+  }
+
+  // Finde die Y-Position, bei der die Timeline-Section mittig ist
+  function getTimelineSectionCenterY() {
+    const section = timeline.closest('.content-section');
+    const rect = section.getBoundingClientRect();
+    const scrollY = window.scrollY;
+    const sectionTop = rect.top + scrollY;
+    const sectionCenter = sectionTop + rect.height / 2;
+    return sectionCenter - window.innerHeight / 2;
+  }
+
+  // Lock-Mechanismus: Seite bleibt stehen, Timeline scrollt horizontal
+  window.addEventListener('scroll', function() {
+    if (!timelineLockActive && isTimelineSectionCentered()) {
+      timelineLockActive = true;
+      timelineLockY = getTimelineSectionCenterY();
+      window.scrollTo({ top: timelineLockY });
+    }
+    // Wenn Section nicht mehr mittig ist, Lock deaktivieren
+    if (timelineLockActive && !isTimelineSectionCentered()) {
+      timelineLockActive = false;
+    }
+  });
+
+  window.addEventListener('wheel', function(e) {
+    if (!timelineLockActive) return;
+
+    const maxTimelineScroll = timeline.scrollWidth - timeline.clientWidth;
+
+    // Horizontal scrollen, solange Timeline nicht am Ende ist
+    if (
+      (e.deltaY > 0 && timeline.scrollLeft < maxTimelineScroll) ||
+      (e.deltaY < 0 && timeline.scrollLeft > 0)
+    ) {
+      e.preventDefault();
+      let newScrollLeft = timeline.scrollLeft + e.deltaY;
+      newScrollLeft = Math.max(0, Math.min(maxTimelineScroll, newScrollLeft));
+      timeline.scrollLeft = newScrollLeft;
+      window.scrollTo({ top: timelineLockY });
+    }
+
+    // Unlock, wenn Timeline ganz rechts (nach unten) oder ganz links (nach oben) ist
+    if (
+      (timeline.scrollLeft >= maxTimelineScroll && e.deltaY > 0) ||
+      (timeline.scrollLeft <= 0 && e.deltaY < 0)
+    ) {
+      timelineLockActive = false;
+    }
+  }, { passive: false });
+
+  // Initialisierung: Lock aktivieren, wenn Section mittig ist
+  if (isTimelineSectionCentered()) {
+    timelineLockActive = true;
+    timelineLockY = getTimelineSectionCenterY();
+    window.scrollTo({ top: timelineLockY });
+  }
+});
