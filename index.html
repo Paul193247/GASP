@@ -162,7 +162,6 @@
       </div>
     </section>
 
-        <!-- Zeitstrahl direkt nach dem Header -->
     <section class="content-section" style="padding:0;">
       <div class="container" style="max-width:100vw; padding:0; margin:0; position:relative;">
         <h2 class="section-title scroll-animation" style="margin-left:32px;">Chronologischer Zeitstrahl</h2>
@@ -234,7 +233,7 @@
         </div>
       </div>
     </section>
-    
+
     <section id="overview" class="content-section">
       <div class="container">
         <div class="content-grid">
@@ -659,32 +658,52 @@
     </footer>
 
     <script>
-      // Horizontal scroll with mouse wheel, dann vertikal nach Ende
       const timeline = document.getElementById('timeline-horizontal');
-      let isAtEnd = false;
+      let lastScrollY = window.scrollY;
+      let isSyncing = false;
 
+      function syncTimelineWithScroll() {
+        if (isSyncing) return;
+        isSyncing = true;
+
+        // Maximale horizontale Scrollweite der Timeline
+        const maxTimelineScroll = timeline.scrollWidth - timeline.clientWidth;
+        // Maximale vertikale Scrollweite der Seite
+        const maxPageScroll = document.body.scrollHeight - window.innerHeight;
+
+        // Anteil der Seite, die gescrollt wurde (0 = oben, 1 = ganz unten)
+        const scrollRatio = window.scrollY / maxPageScroll;
+
+        // Setze die horizontale Scrollposition der Timeline entsprechend
+        timeline.scrollLeft = scrollRatio * maxTimelineScroll;
+
+        isSyncing = false;
+      }
+
+      // Wenn die Seite gescrollt wird, Timeline synchronisieren
+      window.addEventListener('scroll', syncTimelineWithScroll);
+
+      // Wenn die Timeline gescrollt wird, Seite synchronisieren (nur wenn Timeline aktiv ist)
       timeline.addEventListener('wheel', function(e) {
-        if (timeline.matches(':hover')) {
-          if (!isAtEnd) {
-            e.preventDefault();
-            timeline.scrollLeft += e.deltaY;
-            if (timeline.scrollLeft + timeline.clientWidth >= timeline.scrollWidth - 2) {
-              isAtEnd = true;
-            }
-          } else {
-            if (e.deltaY > 0) {
-              isAtEnd = false;
-            } else {
-              e.preventDefault();
-            }
-          }
-        }
-      });
-      timeline.addEventListener('scroll', function() {
-        if (timeline.scrollLeft + timeline.clientWidth < timeline.scrollWidth - 2) {
-          isAtEnd = false;
-        }
-      });
+        // Verhindere das Standardverhalten
+        e.preventDefault();
+
+        // Berechne neue Scrollposition
+        const maxTimelineScroll = timeline.scrollWidth - timeline.clientWidth;
+        let newScrollLeft = timeline.scrollLeft + e.deltaY;
+
+        // Begrenze auf die Timeline
+        newScrollLeft = Math.max(0, Math.min(maxTimelineScroll, newScrollLeft));
+        timeline.scrollLeft = newScrollLeft;
+
+        // Synchronisiere die Seite entsprechend
+        const maxPageScroll = document.body.scrollHeight - window.innerHeight;
+        const scrollRatio = newScrollLeft / maxTimelineScroll;
+        window.scrollTo(0, scrollRatio * maxPageScroll);
+      }, { passive: false });
+
+      // Initial synchronisieren
+      window.addEventListener('DOMContentLoaded', syncTimelineWithScroll);
     </script>
     <script src="script.js"></script>
   </body>
