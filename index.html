@@ -659,56 +659,71 @@
 
     <script>
       const timeline = document.getElementById('timeline-horizontal');
-      let isSyncing = false;
-      let lastScrollY = 0;
+      let timelineLockActive = false;
+      let timelineLockY = 0;
 
-      // Hilfsfunktion: Ist Timeline im Viewport?
-      function isTimelineInView() {
+      // Hilfsfunktion: Timeline-Mitte im Viewport?
+      function isTimelineCenterInView() {
         const rect = timeline.getBoundingClientRect();
-        return rect.top < window.innerHeight && rect.bottom > 0;
+        const center = rect.top + rect.height / 2;
+        return center > window.innerHeight / 2 - 10 && center < window.innerHeight / 2 + 10;
       }
 
-      // Blockiere das Scrollen der Seite, solange Timeline nicht am Ende ist
-      window.addEventListener('wheel', function(e) {
-        if (!isTimelineInView()) return;
+      // Finde die Y-Position, bei der die Timeline mittig ist
+      function getTimelineCenterY() {
+        const rect = timeline.getBoundingClientRect();
+        const scrollY = window.scrollY;
+        const timelineTop = rect.top + scrollY;
+        const timelineCenter = timelineTop + rect.height / 2;
+        return timelineCenter - window.innerHeight / 2;
+      }
 
-        const maxTimelineScroll = timeline.scrollWidth - timeline.clientWidth;
-
-        // Wenn Timeline noch nicht ganz rechts ist (nach unten scrollen)
-        if (timeline.scrollLeft < maxTimelineScroll && e.deltaY > 0) {
-          e.preventDefault();
-          let newScrollLeft = timeline.scrollLeft + e.deltaY;
-          newScrollLeft = Math.max(0, Math.min(maxTimelineScroll, newScrollLeft));
-          timeline.scrollLeft = newScrollLeft;
-
-          // Halte die Seite auf der Timeline-Section fest
-          if (window.scrollY !== lastScrollY) window.scrollTo(0, lastScrollY);
-        }
-        // Wenn Timeline noch nicht ganz links ist (nach oben scrollen)
-        else if (timeline.scrollLeft > 0 && e.deltaY < 0) {
-          e.preventDefault();
-          let newScrollLeft = timeline.scrollLeft + e.deltaY;
-          newScrollLeft = Math.max(0, Math.min(maxTimelineScroll, newScrollLeft));
-          timeline.scrollLeft = newScrollLeft;
-
-          if (window.scrollY !== lastScrollY) window.scrollTo(0, lastScrollY);
-        }
-        // Wenn Timeline am Ende ist, normales Scrollen erlauben
-      }, { passive: false });
-
-      // Wenn Timeline in Sicht kommt, speichere aktuelle Scrollposition
+      // Lock-Mechanismus: Seite bleibt stehen, Timeline scrollt horizontal
       window.addEventListener('scroll', function() {
-        if (isTimelineInView()) {
-          lastScrollY = window.scrollY;
+        if (!timelineLockActive && isTimelineCenterInView()) {
+          timelineLockActive = true;
+          timelineLockY = getTimelineCenterY();
+          window.scrollTo({ top: timelineLockY });
+        }
+        // Wenn Timeline nicht mehr mittig ist (z.B. nach unlock), Lock deaktivieren
+        if (timelineLockActive && !isTimelineCenterInView()) {
+          timelineLockActive = false;
         }
       });
 
-      // Synchronisiere Timeline mit Seiten-Scroll (optional, falls du das willst)
-      // window.addEventListener('scroll', syncTimelineWithScroll);
+      window.addEventListener('wheel', function(e) {
+        if (!timelineLockActive) return;
 
-      // Initialisierung
+        const maxTimelineScroll = timeline.scrollWidth - timeline.clientWidth;
+
+        // Horizontal scrollen, solange Timeline nicht am Ende ist
+        if (
+          (e.deltaY > 0 && timeline.scrollLeft < maxTimelineScroll) ||
+          (e.deltaY < 0 && timeline.scrollLeft > 0)
+        ) {
+          e.preventDefault();
+          let newScrollLeft = timeline.scrollLeft + e.deltaY;
+          newScrollLeft = Math.max(0, Math.min(maxTimelineScroll, newScrollLeft));
+          timeline.scrollLeft = newScrollLeft;
+          window.scrollTo({ top: timelineLockY });
+        }
+
+        // Unlock, wenn Timeline ganz rechts (nach unten) oder ganz links (nach oben) ist
+        if (
+          (timeline.scrollLeft >= maxTimelineScroll && e.deltaY > 0) ||
+          (timeline.scrollLeft <= 0 && e.deltaY < 0)
+        ) {
+          timelineLockActive = false;
+        }
+      }, { passive: false });
+
+      // Initialisierung: Lock aktivieren, wenn Timeline mittig ist
       window.addEventListener('DOMContentLoaded', function() {
-        lastScrollY = window.scrollY;
+        if (isTimelineCenterInView()) {
+          timelineLockActive = true;
+          timelineLockY = getTimelineCenterY();
+          window.scrollTo({ top: timelineLockY });
+        }
       });
     </script>
     <script src="script.js"></script>
