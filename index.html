@@ -669,7 +669,10 @@
         const maxPageScroll = document.body.scrollHeight - window.innerHeight;
         const scrollRatio = window.scrollY / maxPageScroll;
 
-        timeline.scrollLeft = scrollRatio * maxTimelineScroll;
+        // Nur synchronisieren, wenn Timeline nicht am Ende ist
+        if (timeline.scrollLeft < maxTimelineScroll) {
+          timeline.scrollLeft = scrollRatio * maxTimelineScroll;
+        }
 
         isSyncing = false;
       }
@@ -683,6 +686,7 @@
         if (!timelineVisible) return; // Nur blockieren, wenn Timeline sichtbar
 
         const maxTimelineScroll = timeline.scrollWidth - timeline.clientWidth;
+
         // Wenn Timeline noch nicht ganz rechts ist (also noch nicht am Ende)
         if (timeline.scrollLeft < maxTimelineScroll && e.deltaY > 0) {
           // Verhindere Seiten-Scrollen
@@ -708,11 +712,18 @@
           const scrollRatio = newScrollLeft / maxTimelineScroll;
           window.scrollTo(0, scrollRatio * maxPageScroll);
         }
-        // Wenn Timeline am Ende ist, normales Scrollen erlauben
+        // Wenn Timeline ganz rechts ist und weiter nach unten gescrollt wird,
+        // oder ganz links und weiter nach oben, dann normales Scrollen erlauben
       }, { passive: false });
 
-      // Synchronisiere Timeline, wenn Seite gescrollt wird
-      window.addEventListener('scroll', syncTimelineWithScroll);
+      // Verhindere das Scrollen der Seite, solange Timeline nicht am Ende ist
+      window.addEventListener('scroll', function(e) {
+        const maxTimelineScroll = timeline.scrollWidth - timeline.clientWidth;
+        // Wenn Timeline nicht am Ende ist, setze die Seite immer wieder auf die aktuelle Position
+        if (timeline.scrollLeft < maxTimelineScroll) {
+          syncTimelineWithScroll();
+        }
+      });
 
       // Initial synchronisieren
       window.addEventListener('DOMContentLoaded', syncTimelineWithScroll);
