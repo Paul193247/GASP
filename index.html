@@ -5,112 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gemeinsame Außen- und Sicherheitspolitik der EU</title>
     <link rel="stylesheet" href="style.css" />
-    <style>
-      /* Timeline styles (kopiert aus Geschichte.html) */
-      .timeline-horizontal {
-        display: flex;
-        align-items: flex-start;
-        overflow-x: auto;
-        padding: 80px 0 60px 0;
-        margin: 0;
-        width: 100vw !important;
-        min-width: 100vw !important;
-        max-width: 100vw !important;
-        scrollbar-width: thin;
-        position: relative;
-        min-height: 220px;
-        background: transparent;
-      }
-      .timeline-horizontal::-webkit-scrollbar {
-        height: 8px;
-      }
-      .timeline-horizontal::-webkit-scrollbar-thumb {
-        background: #00339933;
-        border-radius: 4px;
-      }
-      .timeline-horizontal-track {
-        position: absolute;
-        left: 0;
-        top: 62px;
-        height: 4px;
-        width: 200% !important;
-        min-width: 100% !important;
-        max-width: 500% !important;
-        background: #003399;
-        border-radius: 2px;
-        z-index: 0;
-        pointer-events: none;
-      }
-      .timeline-event-horizontal {
-        position: relative;
-        min-width: 220px;
-        max-width: 260px;
-        margin-right: 60px;
-        flex-shrink: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        z-index: 1;
-      }
-      .timeline-event-horizontal:last-child {
-        margin-right: 0;
-      }
-      .timeline-dot-horizontal {
-        width: 28px;
-        height: 28px;
-        background: #fff;
-        border: 4px solid #003399;
-        border-radius: 50%;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        position: absolute;
-        top: -30px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 2;
-      }
-      .timeline-date-horizontal {
-        font-weight: bold;
-        color: #003399;
-        margin-bottom: 8px;
-        font-size: 1.1em;
-        text-align: center;
-        margin-top: 0;
-      }
-      .timeline-content-horizontal {
-        background: #f0f0f0;
-        border-radius: 12px;
-        padding: 18px 18px;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.04);
-        transition: background 0.3s;
-        text-align: center;
-        min-height: 100px;
-        margin-top: 15px;
-      }
-      .timeline-event-horizontal:hover .timeline-content-horizontal {
-        background: #e0e7ff;
-      }
-      @media (max-width: 700px) {
-        .timeline-horizontal {
-          padding: 40px 0 20px 0;
-        }
-        .timeline-event-horizontal {
-          min-width: 160px;
-          max-width: 180px;
-          margin-right: 24px;
-        }
-        .timeline-content-horizontal {
-          font-size: 0.95em;
-          padding: 12px 8px;
-          margin-top: 40px;
-        }
-        .timeline-horizontal-track {
-          top: 44px;
-        }
-        .timeline-dot-horizontal {
-          top: 32px;
-        }
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -133,8 +27,6 @@
       </div>
     </header>
 
-
-
     <section class="hero">
       <div class="parallax-container">
         <div class="parallax-layer layer-1"></div>
@@ -156,78 +48,6 @@
                 Herausforderungen der gemeinsamen Außenpolitik.
               </p>
               <a href="#overview" class="buy-button">Mehr erfahren</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section" style="padding:0;">
-      <div class="container" style="max-width:100vw; padding:0; margin:0; position:relative;">
-        <h2 class="section-title scroll-animation" style="margin-left:32px;">Chronologischer Zeitstrahl</h2>
-        <div 
-          class="timeline-horizontal" 
-          id="timeline-horizontal" 
-          style="width:100vw; min-width:100vw; max-width:100vw; border:none; margin-left:0; margin-right:0; padding-left:0; padding-right:0; position:relative; background:transparent;"
-        >
-          <div 
-            class="timeline-horizontal-track" 
-            style="left:0; right:0; width:100vw; min-width:100vw; max-width:100vw;"
-          ></div>
-          <div class="timeline-event-horizontal scroll-animation">
-            <div class="timeline-dot-horizontal"></div>
-            <div class="timeline-date-horizontal">xy</div>
-            <div class="timeline-content-horizontal">
-              xy
-            </div>
-          </div>
-          <div class="timeline-event-horizontal scroll-animation">
-            <div class="timeline-dot-horizontal"></div>
-            <div class="timeline-date-horizontal">xy</div>
-            <div class="timeline-content-horizontal">
-              xy
-            </div>
-          </div>
-          <div class="timeline-event-horizontal scroll-animation">
-            <div class="timeline-dot-horizontal"></div>
-            <div class="timeline-date-horizontal">xy</div>
-            <div class="timeline-content-horizontal">
-              xy
-            </div>
-          </div>
-          <div class="timeline-event-horizontal scroll-animation">
-            <div class="timeline-dot-horizontal"></div>
-            <div class="timeline-date-horizontal">xy</div>
-            <div class="timeline-content-horizontal">
-              xy
-            </div>
-          </div>
-          <div class="timeline-event-horizontal scroll-animation">
-            <div class="timeline-dot-horizontal"></div>
-            <div class="timeline-date-horizontal">xy</div>
-            <div class="timeline-content-horizontal">
-              xy
-            </div>
-          </div>
-          <div class="timeline-event-horizontal scroll-animation">
-            <div class="timeline-dot-horizontal"></div>
-            <div class="timeline-date-horizontal">xy</div>
-            <div class="timeline-content-horizontal">
-              xy
-            </div>
-          </div>
-          <div class="timeline-event-horizontal scroll-animation">
-            <div class="timeline-dot-horizontal"></div>
-            <div class="timeline-date-horizontal">xy</div>
-            <div class="timeline-content-horizontal">
-              xy
-            </div>
-          </div>
-          <div class="timeline-event-horizontal scroll-animation">
-            <div class="timeline-dot-horizontal"></div>
-            <div class="timeline-date-horizontal">xy</div>
-            <div class="timeline-content-horizontal">
-              xy
             </div>
           </div>
         </div>
@@ -265,32 +85,79 @@
         </div>
       </div>
     </section>
-
-    <section id="institutions" class="content-section alt">
-      <div class="container">
-        <div class="content-grid reverse">
-          <div class="content-visual scroll-animation">
-            <img
-              src="/placeholder.svg?height=400&width=500"
-              alt="EU Institutionen"
-            />
+    <section class="content-section" style="padding: 0">
+      <div
+        class="container"
+        style="max-width: 100vw; padding: 0; margin: 0; position: relative"
+      >
+        <h2 class="section-title scroll-animation" style="margin-left: 32px">
+          Chronologischer Zeitstrahl
+        </h2>
+        <div
+          class="timeline-horizontal"
+          id="timeline-horizontal"
+          style="
+            width: 100vw;
+            min-width: 100vw;
+            max-width: 100vw;
+            border: none;
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 0;
+            padding-right: 0;
+            position: relative;
+            background: transparent;
+          "
+        >
+          <div
+            class="timeline-horizontal-track"
+            style="
+              left: 0;
+              right: 0;
+              width: 100vw;
+              min-width: 100vw;
+              max-width: 100vw;
+            "
+          ></div>
+          <div class="timeline-event-horizontal scroll-animation">
+            <div class="timeline-dot-horizontal"></div>
+            <div class="timeline-date-horizontal">xy</div>
+            <div class="timeline-content-horizontal">xy</div>
           </div>
-          <div class="content-text scroll-animation">
-            <h2>Institutionen und Akteure</h2>
-            <p>
-              [Platzhaltertext] Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris.
-            </p>
-            <p>
-              [Platzhaltertext] Duis aute irure dolor in reprehenderit in
-              voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident.
-            </p>
-            <a href="institutions-detail.html" class="detail-link"
-              >Ausführliche Informationen →</a
-            >
+          <div class="timeline-event-horizontal scroll-animation">
+            <div class="timeline-dot-horizontal"></div>
+            <div class="timeline-date-horizontal">xy</div>
+            <div class="timeline-content-horizontal">xy</div>
+          </div>
+          <div class="timeline-event-horizontal scroll-animation">
+            <div class="timeline-dot-horizontal"></div>
+            <div class="timeline-date-horizontal">xy</div>
+            <div class="timeline-content-horizontal">xy</div>
+          </div>
+          <div class="timeline-event-horizontal scroll-animation">
+            <div class="timeline-dot-horizontal"></div>
+            <div class="timeline-date-horizontal">xy</div>
+            <div class="timeline-content-horizontal">xy</div>
+          </div>
+          <div class="timeline-event-horizontal scroll-animation">
+            <div class="timeline-dot-horizontal"></div>
+            <div class="timeline-date-horizontal">xy</div>
+            <div class="timeline-content-horizontal">xy</div>
+          </div>
+          <div class="timeline-event-horizontal scroll-animation">
+            <div class="timeline-dot-horizontal"></div>
+            <div class="timeline-date-horizontal">xy</div>
+            <div class="timeline-content-horizontal">xy</div>
+          </div>
+          <div class="timeline-event-horizontal scroll-animation">
+            <div class="timeline-dot-horizontal"></div>
+            <div class="timeline-date-horizontal">xy</div>
+            <div class="timeline-content-horizontal">xy</div>
+          </div>
+          <div class="timeline-event-horizontal scroll-animation">
+            <div class="timeline-dot-horizontal"></div>
+            <div class="timeline-date-horizontal">xy</div>
+            <div class="timeline-content-horizontal">xy</div>
           </div>
         </div>
       </div>
@@ -352,76 +219,349 @@
       </div>
     </section>
 
-    <section id="instruments" class="content-section">
+    <section id="survey" class="content-section">
       <div class="container">
+        <div class="content-text scroll-animation">
+          <h2>Umfrage zur GASP</h2>
+          <p>
+            Im Rahmen unserer Klassenarbeitsersatzleistung zur GASP haben wir
+            eine Umfrage durchgeführt, um mehr über die Meinung und das Wissen
+            über die GASP zu erfahren. Dabei haben wir zwischen männlich und
+            weiblich sowie dem Alter unterschieden. Insgesammt haben wir 25
+            Antworten bekommen. Herr Bauer, wir möchten uns auch nocheinmal
+            herzlich für Ihre Hilfe bei der Verbreitung der Umfrage bedanken.
+            Sie wahren wirklich eine große Unterstützung!
+          </p>
+        </div>
         <div class="content-grid">
           <div class="content-text scroll-animation">
-            <h2>Instrumente der GASP</h2>
-            <p>
-              [Platzhaltertext] Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat.
-            </p>
-            <ul class="content-list">
-              <li>[Platzhaltertext] Gemeinsame Standpunkte</li>
-              <li>[Platzhaltertext] Gemeinsame Aktionen</li>
-              <li>[Platzhaltertext] Systematische Zusammenarbeit</li>
-              <li>[Platzhaltertext] Politischer Dialog</li>
-            </ul>
-            <a href="instruments-detail.html" class="detail-link"
-              >Ausführliche Informationen →</a
-            >
+            <p>Auffällig ist, dass</p>
           </div>
           <div class="content-visual scroll-animation">
             <div class="chart-placeholder">
-              <h4>Instrumenten-Übersicht</h4>
+              <h4>
+                Wie sicher fühlen Sie sich in Bezug auf die aktuelle
+                sicherheitspolitische Lage in der EU?
+              </h4>
               <div class="chart-bars">
-                <div class="bar" style="height: 80%">
-                  <span>Diplomatie</span>
+                <div class="bar" style="height: 0%">
+                  <span>1</span>
                 </div>
-                <div class="bar" style="height: 60%">
-                  <span>Sanktionen</span>
+                <div class="bar" style="height: 0%">
+                  <span>2</span>
                 </div>
-                <div class="bar" style="height: 40%">
-                  <span>Missionen</span>
+                <div class="bar" style="height: 0%">
+                  <span>3</span>
                 </div>
-                <div class="bar" style="height: 70%"><span>Dialog</span></div>
+                <div class="bar" style="height: 16%"><span>4</span></div>
+                <div class="bar" style="height: 24%"><span>5</span></div>
+                <div class="bar" style="height: 12%"><span>6</span></div>
+                <div class="bar" style="height: 20%"><span>7</span></div>
+                <div class="bar" style="height: 24%"><span>8</span></div>
+                <div class="bar" style="height: 4%"><span>9</span></div>
+                <div class="bar" style="height: 0%"><span>10</span></div>
               </div>
             </div>
           </div>
         </div>
+        <br />
+        <div class="content-grid">
+          <div class="content-text scroll-animation">
+            <p>Auffällig ist, dass</p>
+          </div>
+          <div class="content-visual scroll-animation">
+            <div class="chart-placeholder">
+              <h4>
+                Wie stark glauben Sie, dass die Außen- und Sicherheitspolitik
+                der EU Ihr alltägliches Leben beeinflusst?
+              </h4>
+              <div class="chart-bars">
+                <div class="bar" style="height: 0%">
+                  <span>1</span>
+                </div>
+                <div class="bar" style="height: 0%">
+                  <span>2</span>
+                </div>
+                <div class="bar" style="height: 16%">
+                  <span>3</span>
+                </div>
+                <div class="bar" style="height: 8%"><span>4</span></div>
+                <div class="bar" style="height: 8%"><span>5</span></div>
+                <div class="bar" style="height: 20%"><span>6</span></div>
+                <div class="bar" style="height: 4%"><span>7</span></div>
+                <div class="bar" style="height: 28%"><span>8</span></div>
+                <div class="bar" style="height: 12%"><span>9</span></div>
+                <div class="bar" style="height: 4%"><span>10</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="content-grid">
+          <div class="content-text scroll-animation">
+            <p>Auffällig ist, dass</p>
+          </div>
+          <div class="content-visual scroll-animation">
+            <div class="chart-placeholder">
+              <h4>
+                Was glauben Sie, wie stark wird die GASP von anderen Ländern wie
+                die USA beeinflusst?
+              </h4>
+              <div class="chart-bars">
+                <div class="bar" style="height: 0%">
+                  <span>1</span>
+                </div>
+                <div class="bar" style="height: 0%">
+                  <span>2</span>
+                </div>
+                <div class="bar" style="height: 4%">
+                  <span>3</span>
+                </div>
+                <div class="bar" style="height: 0%"><span>4</span></div>
+                <div class="bar" style="height: 8.3%"><span>5</span></div>
+                <div class="bar" style="height: 8.3%"><span>6</span></div>
+                <div class="bar" style="height: 25%"><span>7</span></div>
+                <div class="bar" style="height: 41%"><span>8</span></div>
+                <div class="bar" style="height: 12.5%"><span>9</span></div>
+                <div class="bar" style="height: 0%"><span>10</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="content-grid">
+          <div class="content-text scroll-animation">
+            <p>Auffällig ist, dass</p>
+          </div>
+          <div class="content-visual scroll-animation">
+            <div class="chart-placeholder">
+              <h4>
+                Haben Sie schon einmal von der GASP gehört? Wenn ja, was wissen
+                Sie darüber?
+              </h4>
+              <div class="chart-bars">
+                <div class="bar" style="height: 32%">
+                  <span>Weiß, was die GASP ist</span>
+                </div>
+                <div class="bar" style="height: 68%">
+                  <span>Weiß nicht, was die GASP ist</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="content-grid">
+          <div class="content-text scroll-animation">
+            <p>Auffällig ist, dass</p>
+          </div>
+          <div class="content-visual scroll-animation">
+            <div class="chart-placeholder">
+              <h4>
+                Versetzen Sie sich in die Lage eines Angriffskriegs auf ein
+                EU-Mitglied, zum Beispiel Deutschland. Denken Sie, dass wir
+                stark genug sind, uns zu verteidigen?
+              </h4>
+              <div class="chart-bars">
+                <div class="bar" style="height: 44%">
+                  <span>Ja</span>
+                </div>
+                <div class="bar" style="height: 56%">
+                  <span>Nein</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="content-grid">
+          <div class="content-text scroll-animation">
+            <p>Auffällig ist, dass</p>
+          </div>
+          <div class="content-visual scroll-animation">
+            <div class="chart-placeholder">
+              <h4>Denken sie das genug für unsere Sicherheit getan wird</h4>
+              <div class="chart-bars">
+                <div class="bar" style="height: 24%">
+                  <span>Ja</span>
+                </div>
+                <div class="bar" style="height: 76%">
+                  <span>Nein</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="content-grid">
+          <div class="content-text scroll-animation">
+            <p>Auffällig ist, dass</p>
+          </div>
+          <div class="content-visual scroll-animation">
+            <div class="chart-placeholder">
+              <h4>
+                Haben Sie sich vor dem Angriffskrieg Russlands auf die Ukraine
+                sicherer gefühlt als heute?
+              </h4>
+              <div class="chart-bars">
+                <div class="bar" style="height: 96%">
+                  <span>Ja</span>
+                </div>
+                <div class="bar" style="height: 4%">
+                  <span>Nein</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="content-grid">
+          <div class="content-text scroll-animation">
+            <p>Auffällig ist, dass</p>
+          </div>
+          <div class="content-visual scroll-animation">
+            <div class="chart-placeholder">
+              <h4>
+                Für wie wahrscheinlich halten Sie es, dass die EU in naher
+                Zukunft direkt in einen Krieg verwickelt wird?
+              </h4>
+              <div class="chart-bars">
+                <div class="bar" style="height: 8%">
+                  <span>1</span>
+                </div>
+                <div class="bar" style="height: 28%">
+                  <span>2</span>
+                </div>
+                <div class="bar" style="height: 36%">
+                  <span>3</span>
+                </div>
+                <div class="bar" style="height: 28%"><span>4</span></div>
+                <div class="bar" style="height: 0%"><span>5</span></div>
+                <div class="bar" style="height: 0%"><span>6</span></div>
+                <div class="bar" style="height: 0%"><span>7</span></div>
+                <div class="bar" style="height: 0%"><span>8</span></div>
+                <div class="bar" style="height: 0%"><span>9</span></div>
+                <div class="bar" style="height: 0%"><span>10</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="content-grid">
+          <div class="content-text scroll-animation">
+            <p>Auffällig ist, dass</p>
+          </div>
+          <div class="content-visual scroll-animation">
+            <div class="chart-placeholder">
+              <h4>
+                Sollten wir uns in Verteidigungsfragen enger an die USA
+                anlehnen?
+              </h4>
+              <div class="chart-bars">
+                <div class="bar" style="height: 52%">
+                  <span>1</span>
+                </div>
+                <div class="bar" style="height: 36%">
+                  <span>2</span>
+                </div>
+                <div class="bar" style="height: 12%">
+                  <span>3</span>
+                </div>
+                <div class="bar" style="height: 0%"><span>4</span></div>
+                <div class="bar" style="height: 0%"><span>5</span></div>
+                <div class="bar" style="height: 0%"><span>6</span></div>
+                <div class="bar" style="height: 0%"><span>7</span></div>
+                <div class="bar" style="height: 0%"><span>8</span></div>
+                <div class="bar" style="height: 0%"><span>9</span></div>
+                <div class="bar" style="height: 0%"><span>10</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="content-grid">
+          <div class="content-text scroll-animation">
+            <p>Auffällig ist, dass</p>
+          </div>
+          <div class="content-visual scroll-animation">
+            <div class="chart-placeholder">
+              <h4>
+                Sind Sie für eine verpflichtende Investition von 5 % des BIP in
+                die Verteidigung?
+              </h4>
+              <div class="chart-bars">
+                <div class="bar" style="height: 64%">
+                  <span>Ja</span>
+                </div>
+                <div class="bar" style="height: 36%">
+                  <span>Nein</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="content-grid">
+          <div class="content-text scroll-animation">
+            <p>Auffällig ist, dass</p>
+          </div>
+          <div class="content-visual scroll-animation">
+            <div class="chart-placeholder">
+              <h4>
+                Wie wichtig ist Ihnen die gemeinsame Sicherheits- und
+                Verteidigungspolitik der EU?
+              </h4>
+              <div class="chart-bars">
+                <div class="bar" style="height: 0%">
+                  <span>1</span>
+                </div>
+                <div class="bar" style="height: 4%">
+                  <span>2</span>
+                </div>
+                <div class="bar" style="height: 8%">
+                  <span>3</span>
+                </div>
+                <div class="bar" style="height: 28%"><span>4</span></div>
+                <div class="bar" style="height: 60%"><span>5</span></div>
+                <div class="bar" style="height: 0%"><span>6</span></div>
+                <div class="bar" style="height: 0%"><span>7</span></div>
+                <div class="bar" style="height: 0%"><span>8</span></div>
+                <div class="bar" style="height: 0%"><span>9</span></div>
+                <div class="bar" style="height: 0%"><span>10</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="index.html" class="detail-link"
+          >Ausführliche Informationen →</a
+        >
       </div>
     </section>
 
     <section id="missions" class="world-map-section">
-        <h2 class="section-title scroll-animation">
-          Fallstudien zu spezifischen Missionen der GASP
-        </h2>
-        <div class="map-container" style="position: relative">
-          <iframe
-            src="map/map.html"
-            width="100%"
-            height="600"
-            style="border: none"
-          ></iframe>
-          <div class="map-info">
-            <div id="region-info">
-              <h3 class="headline1">Wählen Sie eine Region</h3>
-              <p class="description1">
-                [Platzhaltertext] Klicken Sie auf eine Region auf der Karte, um
-                mehr über die GASP-Aktivitäten in diesem Gebiet zu erfahren.
-              </p>
-              <br />
-              <h3 class="headline2">Wählen Sie eine Region</h3>
-              <p class="description2">
-                [Platzhaltertext] Klicken Sie auf eine Region auf der Karte, um
-                mehr über die GASP-Aktivitäten in diesem Gebiet zu erfahren.
-              </p>
-            </div>
+      <h2 class="section-title scroll-animation">
+        Fallstudien zu spezifischen Missionen der GASP
+      </h2>
+      <div class="map-container" style="position: relative">
+        <iframe
+          src="map/map.html"
+          width="100%"
+          height="600"
+          style="border: none"
+        ></iframe>
+        <div class="map-info">
+          <div id="region-info">
+            <h3 class="headline1">Wählen Sie eine Region</h3>
+            <p class="description1">
+              [Platzhaltertext] Klicken Sie auf eine Region auf der Karte, um
+              mehr über die GASP-Aktivitäten in diesem Gebiet zu erfahren.
+            </p>
+            <br />
+            <h3 class="headline2"></h3>
+            <p class="description2"></p>
           </div>
         </div>
+      </div>
     </section>
     <section id="comparison" class="content-section">
       <h2 class="section-title scroll-animation">
@@ -430,162 +570,315 @@
 
       <main>
         <div class="snap-outer">
-                  <section class="snap-section alt">
-          <div class="vergleich-grid reverse">
-            <div class="vergleich-text scroll-animation">
-              <h2>GASP vs. Nato</h2>
-              <p>
-                Die NATO und die Gemeinsame Außen- und Sicherheitspolitik (GASP) sind zwei zentrale Akteure in der internationalen Sicherheitsarchitektur, die jedoch in ihren Ansätzen, ihrer Zielsetzung und den eingesetzten Instrumenten deutliche Unterschiede aufweisen. Die GASP basiert auf Entscheidungen, die durch den Rat der Europäischen Union getroffen werden. Diese Entscheidungen legen gemeinsame Standpunkte und Aktionen der EU-Mitgliedstaaten fest und dienen als Grundlage für diplomatische und sicherheitspolitische Maßnahmen. Im Gegensatz dazu beruhen NATO-Beschlüsse auf einem Konsensprinzip, das bedeutet, dass alle Mitgliedstaaten der Allianz einstimmig zustimmen müssen, bevor Maßnahmen ergriffen werden können. Zudem liegt der Schwerpunkt der NATO traditionell auf militärischen Aspekten der Sicherheitspolitik. Ein weiterer Unterschied zeigt sich in der Anwendung von restriktiven Maßnahmen: Während die NATO keine Sanktionen verhängt, konzentriert sie sich auf Verteidigungsmaßnahmen und die Sicherstellung der kollektiven Verteidigung ihrer Mitgliedstaaten gemäß Artikel 5 des NATO-Vertrags. Die GASP hingegen nutzt Sanktionen als ein zentrales politisches Instrument, um gezielt Druck auf Staaten oder Einzelpersonen auszuüben. Diese Sanktionen können diverse Formen annehmen, darunter Einreiseverbote, das Einfrieren von Vermögenswerten oder auch Handelsbeschränkungen, und dienen dazu, die politischen Ziele der Europäischen Union durchzusetzen. Der politische Dialog der NATO mit Partnerstaaten ist primär sicherheitsrelevant und begrenzt sich auf Themen, die mit Verteidigung, strategischer Partnerschaft und militärischer Zusammenarbeit zusammenhängen. Im Gegensatz dazu verfolgt die GASP einen wesentlich umfassenderen Dialogansatz. Dieser umfasst nicht nur sicherheitspolitische, sondern auch wirtschaftliche, diplomatische und entwicklungspolitische Aspekte, wodurch die GASP eine breitere Palette internationaler Themen adressiert. Auch in der Art und Weise, wie öffentliche Stellungnahmen abgegeben werden, zeigen sich Unterschiede. Die NATO konzentriert sich auf sicherheitspolitische Erklärungen, die häufig das Ziel haben, die militärische Stärke und Verteidigungsbereitschaft der Allianz zu betonen. Die GASP hingegen ist in ihrem Ansatz breiter gefächert und äußert sich auch zu allgemeinen politischen und diplomatischen Fragen, die über sicherheitspolitische Themen hinausgehen. In Bezug auf die praktische Umsetzung ihrer Maßnahmen verfügen die beiden Akteure ebenfalls über sehr unterschiedliche Strukturen. Die NATO stützt sich auf eine umfangreiche militärische Infrastruktur und Kommandohierarchie, die speziell für die Durchführung von Operationen in Krisensituationen ausgelegt ist. Die GASP hingegen setzt ihre Maßnahmen vor allem durch den Europäischen Auswärtigen Dienst (EAD) und zivile Missionen um. Diese Missionen können unterschiedliche Ziele verfolgen, wie beispielsweise die Förderung von Rechtsstaatlichkeit, den Aufbau von Sicherheitskapazitäten oder die Überwachung von Friedensabkommen. Durch diese zivilen und diplomatischen Ansätze zeigt sich der unterschiedliche Charakter der GASP im Vergleich zur eher militärisch ausgerichteten NATO. Zusammenfassend lässt sich feststellen, dass sowohl die NATO als auch die GASP essenzielle Rollen in der internationalen Sicherheitspolitik einnehmen, jedoch mit klar voneinander abgegrenzten Ansätzen und Schwerpunkten agieren. Diese Differenzierung verdeutlicht, wie verschiedene Mechanismen und Strategien genutzt werden, um auf globale und regionale Herausforderungen zu reagieren.              
-              </p>
-            </div>
-            <div class="vergleich-img">
-              <img src="../Flag_of_NATO.svg.png" alt="Nato" />
-            </div>
-          </div>
-        </section>
-        <section class="snap-section">
-          <div class="vergleich-grid">
-            <div class="vergleich-text scroll-animation">
-              <h2>GASP vs. Afrikanische Union (AU)</h2>
-              <p>
-                Die Afrikanische Union (AU) und die Gemeinsame Außen- und Sicherheitspolitik (GASP) der Europäischen Union verfolgen beide das gemeinsame Ziel, Frieden und Sicherheit zu fördern, unterscheiden sich jedoch deutlich in ihrer regionalen Ausrichtung und den Methoden, die sie anwenden. Die Beschlüsse der AU werden hauptsächlich auf regionaler Ebene getroffen, wobei der Schwerpunkt auf der Konfliktlösung in Afrika liegt. Im Gegensatz dazu agiert die GASP auf globaler Ebene und formuliert gemeinsame Außenpolitiken für die Europäische Union. Aufgrund restriktiver Maßnahmen setzt die AU bevorzugt auf diplomatische Interventionen und regionale Missionen, um ihre politischen Ziele zu erreichen, wohingegen die GASP gezielt restriktive Maßnahmen wie Sanktionen nutzt, um Druck auszuüben und politische Ziele durchzusetzen. Der politische Dialog der AU konzentriert sich auf den afrikanischen Kontinent und den Austausch mit internationalen Partnern, mit dem Ziel, regionale Stabilität zu fördern. Die GASP hingegen führt politische Dialoge weltweit und adressiert dabei oft globale Themen wie Handel oder Klimaschutz. Auch in den Erklärungen und Demarchen zeigen sich Unterschiede. Während die AU Statements zu regionalen Themen abgibt, veröffentlicht die GASP Stellungnahmen zu globalen politischen Herausforderungen. In Bezug auf die Umsetzung ihrer Maßnahmen zeigt sich ebenfalls eine klare Differenzierung. Die Friedensmissionen der AU, wie beispielsweise AMISOM, werden ausschließlich auf dem afrikanischen Kontinent durchgeführt. Die GASP hingegen ist global ausgerichtet und leitet Missionen wie EUFOR, die sich oft außerhalb Europas befinden und ein breiteres Spektrum an internationalen Aufgaben umfassen.
-              </p>
-            </div>
-            <div class="vergleich-img">
-              <img src="../Emblem_of_the_African_Union.svg.png" alt="Afrikanische Union (AU)" />
-            </div>
-          </div>
-        </section>
-        <section class="snap-section alt">
-          <div class="vergleich-grid reverse">
-            <div class="vergleich-text scroll-animation">
-              <h2>GASP vs. Commonwealth</h2>
-              <p>
-                Der Commonwealth und die Gemeinsame Außen- und Sicherheitspolitik (GASP) der Europäischen Union unterscheiden sich grundlegend in ihrer Zielsetzung und Struktur. Während die GASP durch Ratsbeschlüsse Entscheidungen trifft, agiert der Commonwealth auf freiwilliger Basis und verfügt über keinerlei bindende Beschlüsse. Dies verdeutlicht den unterschiedlichen Charakter der beiden Organisationen, da die GASP auf rechtlich festgelegte Mechanismen setzt, um ihre Ziele durchzusetzen, während der Commonwealth auf Kooperation und Konsens zwischen seinen Mitgliedern angewiesen ist. Ein weiterer signifikanter Unterschied zeigt sich im Umgang mit restriktiven Maßnahmen. Der Commonwealth verzichtet vollständig auf den Einsatz von Sanktionen. Im Gegensatz dazu nutzt die GASP aktiv Sanktionen, um Druck auszuüben und politische Ziele durchzusetzen. Dieser Unterschied spiegelt die divergierenden Ansätze wider: Während der Commonwealth eher auf Dialog und Zusammenarbeit setzt, hat die GASP ein breiteres Repertoire an Maßnahmen, um ihre politischen Anliegen voranzutreiben. Auch in der Art des politischen Dialogs unterscheiden sich beide Institutionen. Der Commonwealth pflegt politische Dialoge mit dem Ziel, gemeinsame Werte wie Demokratie und Menschenrechte zu fördern. Die GASP hingegen fokussiert ihre Dialoge stärker auf geopolitische Interessen und strebt an, diese durch Verhandlungen und Kooperationen weltweit zu unterstützen. Dieser Fokus auf unterschiedliche Themenbereiche zeigt, wie die beiden Organisationen ihre jeweiligen Zielsetzungen in der internationalen Politik verfolgen. In ihren Erklärungen lassen sich ebenfalls klare Unterschiede feststellen. Der Commonwealth gibt allgemeine Erklärungen zu globalen Themen ab, die oftmals auf die Förderung gemeinsamer Werte abzielen. Im Gegensatz dazu führt die GASP gezielte Demarchen durch, die sich auf spezifische politische Anliegen konzentrieren. Dieser Unterschied in der Herangehensweise unterstreicht die unterschiedliche Ausrichtung der beiden Akteure. Schließlich unterscheiden sich der Commonwealth und die GASP auch in der Umsetzung ihrer Programme und Maßnahmen. Der Commonwealth konzentriert sich auf Bildungs und Entwicklungs fördernde Programme, welche auf langfristige gesellschaftliche Verbesserungen abzielen. Die GASP hingegen führt diplomatische und sicherheitspolitische Missionen durch, die oft kurzfristig auf politische oder sicherheitsrelevante Herausforderungen reagieren. Diese Unterschiede in der operativen Umsetzung verdeutlichen die verschiedenen Rollen, die der Commonwealth und die GASP in der internationalen Gemeinschaft einnehmen.
-              </p>
-            </div>
-            <div class="vergleich-img">
-              <img src="../Flag_of_the_Commonwealth_of_Nations.svg.png" alt="Commonwealth" />
-            </div>
-          </div>
-        </section>
-        </section>
-        <section class="snap-section">
-          <div class="vergleich-grid">
-            <div class="vergleich-text scroll-animation">
-              <h2>GASP vs. Die Vereinten Nationen (UN)</h2>
-              <p>
-                Mechanismen, die sie anwenden, um diese Ziele zu erreichen. Ein zentraler Unterschied zeigt sich in der Art und Weise, wie Entscheidungen getroffen werden. Innerhalb der UN ist der Sicherheitsrat das Hauptorgan für die Beschlussfassung zu globalen Sicherheitsfragen. Der Sicherheitsrat ist mit der Verantwortung betraut, verbindliche Entscheidungen zu treffen, die alle Mitgliedstaaten betreffen und umgesetzt werden müssen. Im Gegensatz dazu agiert die GASP auf EU-Ebene und trifft Entscheidungen, die darauf abzielen, die Außenpolitik der Mitgliedstaaten zu koordinieren und gemeinsame Standpunkte zu formulieren. Während der UN-Sicherheitsrat somit eine globale Reichweite hat, fokussiert sich die GASP stärker auf die regionale Zusammenarbeit innerhalb der EU. Ein weiterer wichtiger Unterschied liegt in der Anwendung restriktiver Maßnahmen. Die Vereinten Nationen verhängen Sanktionen auf globaler Ebene und zielen dabei darauf ab, Staaten, Organisationen oder Einzelpersonen zur Einhaltung internationaler Normen und zur Konfliktlösung zu bewegen. Diese Sanktionen können wirtschaftlicher, diplomatischer oder militärischer Natur sein und haben eine breite internationale Wirkung. Die GASP hingegen nutzt Sanktionen gezielt, um die strategischen Interessen der Europäischen Union zu fördern. Dabei werden Maßnahmen wie Einreiseverbote, Vermögenssperren oder Handelsbeschränkungen hauptsächlich im Einklang mit den politischen und sicherheitspolitischen Zielen der EU eingesetzt. Auch in der Art des politischen Dialogs zeigen sich Unterschiede. Die UN führt multilaterale Dialoge auf globaler Ebene und bringt dabei eine Vielzahl von Staaten und Akteuren zusammen, um Themen von internationaler Relevanz zu besprechen. Diese Dialoge umfassen eine breite Palette von Themen wie Frieden, Sicherheit, Entwicklung und Klimaschutz. Die GASP hingegen konzentriert sich auf bilaterale und regionale Dialoge, die speziell darauf abzielen, die Beziehungen zu einzelnen Staaten oder Regionen zu stärken und dabei oft spezifische europäische Interessen zu adressieren. Diese Dialoge sind enger fokussiert und dienen dazu, die Zusammenarbeit innerhalb und außerhalb der EU gezielt zu fördern. In ihren Erklärungen und Demarchen unterscheiden sich die UN und die GASP ebenfalls. Die Vereinten Nationen veröffentlichen umfassende globale Erklärungen, die sich mit weitreichenden internationalen Themen befassen, wie etwa Menschenrechte, humanitäre Krisen oder globale Sicherheitsfragen. Diese Erklärungen haben oft einen universellen Charakter und spiegeln die gemeinsamen Werte und Ziele der internationalen Gemeinschaft wider. Im Gegensatz dazu gibt die GASP spezifische Demarchen aus, die sich auf europäische Anliegen und Prioritäten konzentrieren. Diese Demarchen sind zielgerichtet und haben eine engere Ausrichtung, die auf die politischen und wirtschaftlichen Interessen der EU abgestimmt ist. Schließlich unterscheiden sich die beiden Akteure auch in der Umsetzung ihrer Maßnahmen. Die Friedensmissionen der UN, wie beispielsweise MINUSMA in Mali, sind global orientiert und zielen darauf ab, Konflikte in verschiedenen Teilen der Welt zu lösen und Frieden zu fördern. Diese Missionen umfassen oft eine Vielzahl von Akteuren und Ressourcen und haben eine breite internationale Unterstützung. Die GASP hingegen führt Missionen durch, die vor allem auf die Interessen und Ziele der Europäischen Union abgestimmt sind. Beispiele wie EUFOR zeigen, dass diese Missionen häufig regional ausgerichtet sind und spezifische sicherheitspolitische oder diplomatische Herausforderungen adressieren, die für die EU von strategischer Bedeutung sind. Zusammenfassend lässt sich sagen, dass die Vereinten Nationen und die GASP trotz ihrer gemeinsamen Ziele im Bereich Frieden und Sicherheit unterschiedliche Ansätze und Mechanismen verfolgen. Während die UN eine globale Perspektive einnimmt und multilaterale Lösungen anstrebt, fokussiert sich die GASP stärker auf regionale und spezifische europäische Interessen. Diese Unterschiede verdeutlichen die jeweils einzigartigen Rollen, die beide Akteure in der internationalen Gemeinschaft spielen.              
-              </p>
+          <section class="snap-section alt">
+            <div class="vergleich-grid reverse">
+              <div class="vergleich-text scroll-animation">
+                <h2>GASP vs. Nato</h2>
+                <p>
+                  Die NATO und die Gemeinsame Außen- und Sicherheitspolitik
+                  (GASP) sind zwei zentrale Akteure in der internationalen
+                  Sicherheitsarchitektur, die jedoch in ihren Ansätzen, ihrer
+                  Zielsetzung und den eingesetzten Instrumenten deutliche
+                  Unterschiede aufweisen. Die GASP basiert auf Entscheidungen,
+                  die durch den Rat der Europäischen Union getroffen werden.
+                  Diese Entscheidungen legen gemeinsame Standpunkte und Aktionen
+                  der EU-Mitgliedstaaten fest und dienen als Grundlage für
+                  diplomatische und sicherheitspolitische Maßnahmen. Im
+                  Gegensatz dazu beruhen NATO-Beschlüsse auf einem
+                  Konsensprinzip, das bedeutet, dass alle Mitgliedstaaten der
+                  Allianz einstimmig zustimmen müssen, bevor Maßnahmen ergriffen
+                  werden können. Zudem liegt der Schwerpunkt der NATO
+                  traditionell auf militärischen Aspekten der
+                  Sicherheitspolitik. Ein weiterer Unterschied zeigt sich in der
+                  Anwendung von restriktiven Maßnahmen: Während die NATO keine
+                  Sanktionen verhängt, konzentriert sie sich auf
+                  Verteidigungsmaßnahmen und die Sicherstellung der kollektiven
+                  Verteidigung ihrer Mitgliedstaaten gemäß Artikel 5 des
+                  NATO-Vertrags. Die GASP hingegen nutzt Sanktionen als ein
+                  zentrales politisches Instrument, um gezielt Druck auf Staaten
+                  oder Einzelpersonen auszuüben. Diese Sanktionen können diverse
+                  Formen annehmen, darunter Einreiseverbote, das Einfrieren von
+                  Vermögenswerten oder auch Handelsbeschränkungen, und dienen
+                  dazu, die politischen Ziele der Europäischen Union
+                  durchzusetzen. Der politische Dialog der NATO mit
+                  Partnerstaaten ist primär sicherheitsrelevant und begrenzt
+                  sich auf Themen, die mit Verteidigung, strategischer
+                  Partnerschaft und militärischer Zusammenarbeit zusammenhängen.
+                  Im Gegensatz dazu verfolgt die GASP einen wesentlich
+                  umfassenderen Dialogansatz. Dieser umfasst nicht nur
+                  sicherheitspolitische, sondern auch wirtschaftliche,
+                  diplomatische und entwicklungspolitische Aspekte, wodurch die
+                  GASP eine breitere Palette internationaler Themen adressiert.
+                  Auch in der Art und Weise, wie öffentliche Stellungnahmen
+                  abgegeben werden, zeigen sich Unterschiede. Die NATO
+                  konzentriert sich auf sicherheitspolitische Erklärungen, die
+                  häufig das Ziel haben, die militärische Stärke und
+                  Verteidigungsbereitschaft der Allianz zu betonen. Die GASP
+                  hingegen ist in ihrem Ansatz breiter gefächert und äußert sich
+                  auch zu allgemeinen politischen und diplomatischen Fragen, die
+                  über sicherheitspolitische Themen hinausgehen. In Bezug auf
+                  die praktische Umsetzung ihrer Maßnahmen verfügen die beiden
+                  Akteure ebenfalls über sehr unterschiedliche Strukturen. Die
+                  NATO stützt sich auf eine umfangreiche militärische
+                  Infrastruktur und Kommandohierarchie, die speziell für die
+                  Durchführung von Operationen in Krisensituationen ausgelegt
+                  ist. Die GASP hingegen setzt ihre Maßnahmen vor allem durch
+                  den Europäischen Auswärtigen Dienst (EAD) und zivile Missionen
+                  um. Diese Missionen können unterschiedliche Ziele verfolgen,
+                  wie beispielsweise die Förderung von Rechtsstaatlichkeit, den
+                  Aufbau von Sicherheitskapazitäten oder die Überwachung von
+                  Friedensabkommen. Durch diese zivilen und diplomatischen
+                  Ansätze zeigt sich der unterschiedliche Charakter der GASP im
+                  Vergleich zur eher militärisch ausgerichteten NATO.
+                  Zusammenfassend lässt sich feststellen, dass sowohl die NATO
+                  als auch die GASP essenzielle Rollen in der internationalen
+                  Sicherheitspolitik einnehmen, jedoch mit klar voneinander
+                  abgegrenzten Ansätzen und Schwerpunkten agieren. Diese
+                  Differenzierung verdeutlicht, wie verschiedene Mechanismen und
+                  Strategien genutzt werden, um auf globale und regionale
+                  Herausforderungen zu reagieren.
+                </p>
               </div>
-            <div class="vergleich-img">
-              <img src="../UN_emblem_blue.svg.png" alt="UN" />
+              <div class="vergleich-img">
+                <img src="../Flag_of_NATO.svg.png" alt="Nato" />
+              </div>
             </div>
-          </div>
-        </section>
-        <section class="snap-section alt">
-          <div class="vergleich-grid reverse">
-            <div class="vergleich-text scroll-animation">
-              <h2>GASP vs. MERCOSUR</h2>
-              <p>
-                MERCOSUR und die GASP unterscheiden sich grundlegend in ihrer Zielsetzung und den eingesetzten Instrumenten. MERCOSUR konzentriert sich auf Handel und Wirtschaft, wobei die Beschlüsse auf die regionale Integration und Zusammenarbeit abzielen. Die GASP hingegen koordiniert außen- und sicherheitspolitische Angelegenheiten und formuliert verbindliche Ratsbeschlüsse. Hinsichtlich restriktiver Maßnahmen verzichtet MERCOSUR vollständig auf Sanktionen und fördert stattdessen wirtschaftliche Kooperation und den Abbau von Handelsbarrieren. Die GASP nutzt Sanktionen aktiv, etwa in Form von Einreiseverboten oder Vermögenssperren, um strategische Ziele der EU zu fördern. Im politischen Dialog unterscheidet sich MERCOSUR ebenfalls stark von der GASP. MERCOSUR konzentriert sich auf wirtschaftliche Beziehungen innerhalb der Region, während die GASP globale Dialoge führt, die geopolitische Themen und internationale Kooperationen adressieren. Statements und öffentliche Erklärungen von MERCOSUR betreffen meist wirtschaftsbezogene Themen der regionalen Zusammenarbeit. Im Gegensatz dazu gibt die GASP Stellungnahmen zu globalen politischen und sicherheitspolitischen Herausforderungen ab, darunter Konfliktlösungen und Menschenrechte. Die Umsetzung ihrer Maßnahmen spiegelt die unterschiedlichen Zielsetzungen wider. MERCOSUR arbeitet an der regionalen wirtschaftlichen Integration und fördert Projekte, die den innerregionalen Handel stärken. Die GASP führt sicherheitspolitische und diplomatische Missionen weltweit durch, einschließlich Friedensmissionen und Initiativen zur globalen Stabilität und Sicherheit. Zusammenfassend zeigt sich, dass MERCOSUR und die GASP vollkommen unterschiedliche geografische und politische Schwerpunkte verfolgen. MERCOSUR agiert als regionaler Akteur mit wirtschaftlichem Fokus, während die GASP ein breites sicherheitspolitisches und diplomatisches Mandat auf globaler Ebene wahrnimmt.
-              </p>
+          </section>
+          <section class="snap-section">
+            <div class="vergleich-grid">
+              <div class="vergleich-text scroll-animation">
+                <h2>GASP vs. Afrikanische Union (AU)</h2>
+                <p>
+                  Die Afrikanische Union (AU) und die Gemeinsame Außen- und
+                  Sicherheitspolitik (GASP) der Europäischen Union verfolgen
+                  beide das gemeinsame Ziel, Frieden und Sicherheit zu fördern,
+                  unterscheiden sich jedoch deutlich in ihrer regionalen
+                  Ausrichtung und den Methoden, die sie anwenden. Die Beschlüsse
+                  der AU werden hauptsächlich auf regionaler Ebene getroffen,
+                  wobei der Schwerpunkt auf der Konfliktlösung in Afrika liegt.
+                  Im Gegensatz dazu agiert die GASP auf globaler Ebene und
+                  formuliert gemeinsame Außenpolitiken für die Europäische
+                  Union. Aufgrund restriktiver Maßnahmen setzt die AU bevorzugt
+                  auf diplomatische Interventionen und regionale Missionen, um
+                  ihre politischen Ziele zu erreichen, wohingegen die GASP
+                  gezielt restriktive Maßnahmen wie Sanktionen nutzt, um Druck
+                  auszuüben und politische Ziele durchzusetzen. Der politische
+                  Dialog der AU konzentriert sich auf den afrikanischen
+                  Kontinent und den Austausch mit internationalen Partnern, mit
+                  dem Ziel, regionale Stabilität zu fördern. Die GASP hingegen
+                  führt politische Dialoge weltweit und adressiert dabei oft
+                  globale Themen wie Handel oder Klimaschutz. Auch in den
+                  Erklärungen und Demarchen zeigen sich Unterschiede. Während
+                  die AU Statements zu regionalen Themen abgibt, veröffentlicht
+                  die GASP Stellungnahmen zu globalen politischen
+                  Herausforderungen. In Bezug auf die Umsetzung ihrer Maßnahmen
+                  zeigt sich ebenfalls eine klare Differenzierung. Die
+                  Friedensmissionen der AU, wie beispielsweise AMISOM, werden
+                  ausschließlich auf dem afrikanischen Kontinent durchgeführt.
+                  Die GASP hingegen ist global ausgerichtet und leitet Missionen
+                  wie EUFOR, die sich oft außerhalb Europas befinden und ein
+                  breiteres Spektrum an internationalen Aufgaben umfassen.
+                </p>
+              </div>
+              <div class="vergleich-img">
+                <img
+                  src="../Emblem_of_the_African_Union.svg.png"
+                  alt="Afrikanische Union (AU)"
+                />
+              </div>
             </div>
-            <div class="vergleich-img">
-              <img src="../mercosur.svg" alt="MERCOSUR" />
+          </section>
+          <section class="snap-section alt">
+            <div class="vergleich-grid reverse">
+              <div class="vergleich-text scroll-animation">
+                <h2>GASP vs. Commonwealth</h2>
+                <p>
+                  Der Commonwealth und die Gemeinsame Außen- und
+                  Sicherheitspolitik (GASP) der Europäischen Union unterscheiden
+                  sich grundlegend in ihrer Zielsetzung und Struktur. Während
+                  die GASP durch Ratsbeschlüsse Entscheidungen trifft, agiert
+                  der Commonwealth auf freiwilliger Basis und verfügt über
+                  keinerlei bindende Beschlüsse. Dies verdeutlicht den
+                  unterschiedlichen Charakter der beiden Organisationen, da die
+                  GASP auf rechtlich festgelegte Mechanismen setzt, um ihre
+                  Ziele durchzusetzen, während der Commonwealth auf Kooperation
+                  und Konsens zwischen seinen Mitgliedern angewiesen ist. Ein
+                  weiterer signifikanter Unterschied zeigt sich im Umgang mit
+                  restriktiven Maßnahmen. Der Commonwealth verzichtet
+                  vollständig auf den Einsatz von Sanktionen. Im Gegensatz dazu
+                  nutzt die GASP aktiv Sanktionen, um Druck auszuüben und
+                  politische Ziele durchzusetzen. Dieser Unterschied spiegelt
+                  die divergierenden Ansätze wider: Während der Commonwealth
+                  eher auf Dialog und Zusammenarbeit setzt, hat die GASP ein
+                  breiteres Repertoire an Maßnahmen, um ihre politischen
+                  Anliegen voranzutreiben. Auch in der Art des politischen
+                  Dialogs unterscheiden sich beide Institutionen. Der
+                  Commonwealth pflegt politische Dialoge mit dem Ziel,
+                  gemeinsame Werte wie Demokratie und Menschenrechte zu fördern.
+                  Die GASP hingegen fokussiert ihre Dialoge stärker auf
+                  geopolitische Interessen und strebt an, diese durch
+                  Verhandlungen und Kooperationen weltweit zu unterstützen.
+                  Dieser Fokus auf unterschiedliche Themenbereiche zeigt, wie
+                  die beiden Organisationen ihre jeweiligen Zielsetzungen in der
+                  internationalen Politik verfolgen. In ihren Erklärungen lassen
+                  sich ebenfalls klare Unterschiede feststellen. Der
+                  Commonwealth gibt allgemeine Erklärungen zu globalen Themen
+                  ab, die oftmals auf die Förderung gemeinsamer Werte abzielen.
+                  Im Gegensatz dazu führt die GASP gezielte Demarchen durch, die
+                  sich auf spezifische politische Anliegen konzentrieren. Dieser
+                  Unterschied in der Herangehensweise unterstreicht die
+                  unterschiedliche Ausrichtung der beiden Akteure. Schließlich
+                  unterscheiden sich der Commonwealth und die GASP auch in der
+                  Umsetzung ihrer Programme und Maßnahmen. Der Commonwealth
+                  konzentriert sich auf Bildungs und Entwicklungs fördernde
+                  Programme, welche auf langfristige gesellschaftliche
+                  Verbesserungen abzielen. Die GASP hingegen führt diplomatische
+                  und sicherheitspolitische Missionen durch, die oft kurzfristig
+                  auf politische oder sicherheitsrelevante Herausforderungen
+                  reagieren. Diese Unterschiede in der operativen Umsetzung
+                  verdeutlichen die verschiedenen Rollen, die der Commonwealth
+                  und die GASP in der internationalen Gemeinschaft einnehmen.
+                </p>
+              </div>
+              <div class="vergleich-img">
+                <img
+                  src="../Flag_of_the_Commonwealth_of_Nations.svg.png"
+                  alt="Commonwealth"
+                />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+          <section class="snap-section">
+            <div class="vergleich-grid">
+              <div class="vergleich-text scroll-animation">
+                <h2>GASP vs. Die Vereinten Nationen (UN)</h2>
+                <p>
+                  Mechanismen, die sie anwenden, um diese Ziele zu erreichen.
+                  Ein zentraler Unterschied zeigt sich in der Art und Weise, wie
+                  Entscheidungen getroffen werden. Innerhalb der UN ist der
+                  Sicherheitsrat das Hauptorgan für die Beschlussfassung zu
+                  globalen Sicherheitsfragen. Der Sicherheitsrat ist mit der
+                  Verantwortung betraut, verbindliche Entscheidungen zu treffen,
+                  die alle Mitgliedstaaten betreffen und umgesetzt werden
+                  müssen. Im Gegensatz dazu agiert die GASP auf EU-Ebene und
+                  trifft Entscheidungen, die darauf abzielen, die Außenpolitik
+                  der Mitgliedstaaten zu koordinieren und gemeinsame Standpunkte
+                  zu formulieren. Während der UN-Sicherheitsrat somit eine
+                  globale Reichweite hat, fokussiert sich die GASP stärker auf
+                  die regionale Zusammenarbeit innerhalb der EU. Ein weiterer
+                  wichtiger Unterschied liegt in der Anwendung restriktiver
+                  Maßnahmen. Die Vereinten Nationen verhängen Sanktionen auf
+                  globaler Ebene und zielen dabei darauf ab, Staaten,
+                  Organisationen oder Einzelpersonen zur Einhaltung
+                  internationaler Normen und zur Konfliktlösung zu bewegen.
+                  Diese Sanktionen können wirtschaftlicher, diplomatischer oder
+                  militärischer Natur sein und haben eine breite internationale
+                  Wirkung. Die GASP hingegen nutzt Sanktionen gezielt, um die
+                  strategischen Interessen der Europäischen Union zu fördern.
+                  Dabei werden Maßnahmen wie Einreiseverbote, Vermögenssperren
+                  oder Handelsbeschränkungen hauptsächlich im Einklang mit den
+                  politischen und sicherheitspolitischen Zielen der EU
+                  eingesetzt. Auch in der Art des politischen Dialogs zeigen
+                  sich Unterschiede. Die UN führt multilaterale Dialoge auf
+                  globaler Ebene und bringt dabei eine Vielzahl von Staaten und
+                  Akteuren zusammen, um Themen von internationaler Relevanz zu
+                  besprechen. Diese Dialoge umfassen eine breite Palette von
+                  Themen wie Frieden, Sicherheit, Entwicklung und Klimaschutz.
+                  Die GASP hingegen konzentriert sich auf bilaterale und
+                  regionale Dialoge, die speziell darauf abzielen, die
+                  Beziehungen zu einzelnen Staaten oder Regionen zu stärken und
+                  dabei oft spezifische europäische Interessen zu adressieren.
+                  Diese Dialoge sind enger fokussiert und dienen dazu, die
+                  Zusammenarbeit innerhalb und außerhalb der EU gezielt zu
+                  fördern. In ihren Erklärungen und Demarchen unterscheiden sich
+                  die UN und die GASP ebenfalls. Die Vereinten Nationen
+                  veröffentlichen umfassende globale Erklärungen, die sich mit
+                  weitreichenden internationalen Themen befassen, wie etwa
+                  Menschenrechte, humanitäre Krisen oder globale
+                  Sicherheitsfragen. Diese Erklärungen haben oft einen
+                  universellen Charakter und spiegeln die gemeinsamen Werte und
+                  Ziele der internationalen Gemeinschaft wider. Im Gegensatz
+                  dazu gibt die GASP spezifische Demarchen aus, die sich auf
+                  europäische Anliegen und Prioritäten konzentrieren. Diese
+                  Demarchen sind zielgerichtet und haben eine engere
+                  Ausrichtung, die auf die politischen und wirtschaftlichen
+                  Interessen der EU abgestimmt ist. Schließlich unterscheiden
+                  sich die beiden Akteure auch in der Umsetzung ihrer Maßnahmen.
+                  Die Friedensmissionen der UN, wie beispielsweise MINUSMA in
+                  Mali, sind global orientiert und zielen darauf ab, Konflikte
+                  in verschiedenen Teilen der Welt zu lösen und Frieden zu
+                  fördern. Diese Missionen umfassen oft eine Vielzahl von
+                  Akteuren und Ressourcen und haben eine breite internationale
+                  Unterstützung. Die GASP hingegen führt Missionen durch, die
+                  vor allem auf die Interessen und Ziele der Europäischen Union
+                  abgestimmt sind. Beispiele wie EUFOR zeigen, dass diese
+                  Missionen häufig regional ausgerichtet sind und spezifische
+                  sicherheitspolitische oder diplomatische Herausforderungen
+                  adressieren, die für die EU von strategischer Bedeutung sind.
+                  Zusammenfassend lässt sich sagen, dass die Vereinten Nationen
+                  und die GASP trotz ihrer gemeinsamen Ziele im Bereich Frieden
+                  und Sicherheit unterschiedliche Ansätze und Mechanismen
+                  verfolgen. Während die UN eine globale Perspektive einnimmt
+                  und multilaterale Lösungen anstrebt, fokussiert sich die GASP
+                  stärker auf regionale und spezifische europäische Interessen.
+                  Diese Unterschiede verdeutlichen die jeweils einzigartigen
+                  Rollen, die beide Akteure in der internationalen Gemeinschaft
+                  spielen.
+                </p>
+              </div>
+              <div class="vergleich-img">
+                <img src="../UN_emblem_blue.svg.png" alt="UN" />
+              </div>
+            </div>
+          </section>
+          <section class="snap-section alt">
+            <div class="vergleich-grid reverse">
+              <div class="vergleich-text scroll-animation">
+                <h2>GASP vs. MERCOSUR</h2>
+                <p>
+                  MERCOSUR und die GASP unterscheiden sich grundlegend in ihrer
+                  Zielsetzung und den eingesetzten Instrumenten. MERCOSUR
+                  konzentriert sich auf Handel und Wirtschaft, wobei die
+                  Beschlüsse auf die regionale Integration und Zusammenarbeit
+                  abzielen. Die GASP hingegen koordiniert außen- und
+                  sicherheitspolitische Angelegenheiten und formuliert
+                  verbindliche Ratsbeschlüsse. Hinsichtlich restriktiver
+                  Maßnahmen verzichtet MERCOSUR vollständig auf Sanktionen und
+                  fördert stattdessen wirtschaftliche Kooperation und den Abbau
+                  von Handelsbarrieren. Die GASP nutzt Sanktionen aktiv, etwa in
+                  Form von Einreiseverboten oder Vermögenssperren, um
+                  strategische Ziele der EU zu fördern. Im politischen Dialog
+                  unterscheidet sich MERCOSUR ebenfalls stark von der GASP.
+                  MERCOSUR konzentriert sich auf wirtschaftliche Beziehungen
+                  innerhalb der Region, während die GASP globale Dialoge führt,
+                  die geopolitische Themen und internationale Kooperationen
+                  adressieren. Statements und öffentliche Erklärungen von
+                  MERCOSUR betreffen meist wirtschaftsbezogene Themen der
+                  regionalen Zusammenarbeit. Im Gegensatz dazu gibt die GASP
+                  Stellungnahmen zu globalen politischen und
+                  sicherheitspolitischen Herausforderungen ab, darunter
+                  Konfliktlösungen und Menschenrechte. Die Umsetzung ihrer
+                  Maßnahmen spiegelt die unterschiedlichen Zielsetzungen wider.
+                  MERCOSUR arbeitet an der regionalen wirtschaftlichen
+                  Integration und fördert Projekte, die den innerregionalen
+                  Handel stärken. Die GASP führt sicherheitspolitische und
+                  diplomatische Missionen weltweit durch, einschließlich
+                  Friedensmissionen und Initiativen zur globalen Stabilität und
+                  Sicherheit. Zusammenfassend zeigt sich, dass MERCOSUR und die
+                  GASP vollkommen unterschiedliche geografische und politische
+                  Schwerpunkte verfolgen. MERCOSUR agiert als regionaler Akteur
+                  mit wirtschaftlichem Fokus, während die GASP ein breites
+                  sicherheitspolitisches und diplomatisches Mandat auf globaler
+                  Ebene wahrnimmt.
+                </p>
+              </div>
+              <div class="vergleich-img">
+                <img src="../mercosur.svg" alt="MERCOSUR" />
+              </div>
+            </div>
+          </section>
         </div>
-        </main>
-    </section>
-
-    <section id="challenges" class="content-section alt">
-      <div class="container">
-        <div class="content-grid reverse">
-          <div class="content-visual scroll-animation">
-            <img
-              src="/placeholder.svg?height=400&width=500"
-              alt="Herausforderungen Diagramm"
-            />
-          </div>
-          <div class="content-text scroll-animation">
-            <h2>Aktuelle Herausforderungen</h2>
-            <p>
-              [Platzhaltertext] Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris.
-            </p>
-            <p>
-              [Platzhaltertext] Duis aute irure dolor in reprehenderit in
-              voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-            <a href="challenges-detail.html" class="detail-link"
-              >Ausführliche Informationen →</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="other" class="content-section">
-      <div class="container">
-        <div class="content-grid">
-          <div class="content-text scroll-animation">
-            <h2>EU-Missionen weltweit</h2>
-            <p>
-              [Platzhaltertext] Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat.
-            </p>
-            <p>
-              [Platzhaltertext] Duis aute irure dolor in reprehenderit in
-              voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-            <a href="missions-detail.html" class="detail-link"
-              >Ausführliche Informationen →</a
-            >
-          </div>
-          <div class="content-visual scroll-animation">
-            <img
-              src="/placeholder.svg?height=400&width=500"
-              alt="EU Missionen Karte"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="future" class="content-section alt">
-      <div class="container">
-        <div class="content-grid reverse">
-          <div class="content-visual scroll-animation">
-            <img
-              src="/placeholder.svg?height=400&width=500"
-              alt="Zukunft der GASP"
-            />
-          </div>
-          <div class="content-text scroll-animation">
-            <h2>Zukunft der GASP</h2>
-            <p>
-              [Platzhaltertext] Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris.
-            </p>
-            <p>
-              [Platzhaltertext] Duis aute irure dolor in reprehenderit in
-              voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-            <a href="future-detail.html" class="detail-link"
-              >Ausführliche Informationen →</a
-            >
-          </div>
-        </div>
-      </div>
+      </main>
     </section>
 
     <section class="cta">
@@ -608,7 +901,7 @@
           <div class="footer-column">
             <h3>Themen</h3>
             <ul class="footer-links">
-              <li><a href="overview-detail.html">Überblick</a></li>
+              <li><a href="#overview">Überblick</a></li>
               <li><a href="institutions-detail.html">Institutionen</a></li>
               <li><a href="instruments-detail.html">Instrumente</a></li>
               <li><a href="challenges-detail.html">Herausforderungen</a></li>
