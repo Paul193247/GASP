@@ -857,3 +857,19 @@ button:focus {
     top: 32px;
   }
 }
+
+.img_dark_theme {
+  display: none;
+}
+.img_light_theme {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  .img_dark_theme {
+    display: block;
+  }
+  .img_light_theme {
+    display: none;
+  }
+}
