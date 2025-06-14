@@ -112,7 +112,16 @@ countries.forEach((country) => {
     Object.keys(countrydata_military).includes(country.id) ||
     Object.keys(countrydata_civil).includes(country.id)
   ) {
-    country.classList.add("selectable");
+    if (
+      Object.keys(countrydata_military).includes(country.id) &&
+      Object.keys(countrydata_civil).includes(country.id)
+    ) {
+      country.classList.add("selectable_both");
+    } else if (Object.keys(countrydata_military).includes(country.id)) {
+      country.classList.add("selectable_military");
+    } else {
+      country.classList.add("selectable_civilian");
+    }
     country.addEventListener("mouseenter", function () {
       this.classList.add("hovered");
     });

@@ -110,7 +110,16 @@ button:disabled:hover {
   fill: #051025 !important;
 }
 
-.selectable {
+.selectable_military {
   cursor: pointer;
   fill: #213566;
+}
+.selectable_civilian {
+  cursor: pointer;
+  fill: #602525;
+}
+
+.selectable_both {
+  cursor: pointer;
+  fill: #402545;
 }
