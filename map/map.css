@@ -112,14 +112,44 @@ button:disabled:hover {
 
 .selectable_military {
   cursor: pointer;
-  fill: #213566;
+  fill: #3060bb;
 }
 .selectable_civilian {
   cursor: pointer;
-  fill: #602525;
+  fill: #bb2525;
 }
 
 .selectable_both {
   cursor: pointer;
-  fill: #402545;
+  fill: url(#stripes);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #222;
+    color: #f0f0f0;
+  }
+
+  path {
+    fill: #c4c4c4;
+    stroke: #222;
+  }
+
+  .close-button {
+    background-color: #444;
+    color: #e0e0e0;
+  }
+
+  .close-button:hover {
+    background-color: #666;
+  }
+
+  .zoom-controls button {
+    background-color: #444;
+    color: #e0e0e0;
+  }
+
+  .zoom-controls button:hover {
+    background-color: #666;
+  }
 }

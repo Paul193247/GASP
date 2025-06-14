@@ -61,16 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Header background on scroll
-window.addEventListener("scroll", function () {
-  const header = document.querySelector("header");
-  if (window.scrollY > 100) {
-    header.style.backgroundColor = "rgba(255, 255, 255, 0.98)";
-  } else {
-    header.style.backgroundColor = "rgba(255, 255, 255, 0.95)";
-  }
-});
-
 const headline = document.querySelector(".headline1");
 const headline2 = document.querySelector(".headline2");
 const description = document.querySelector(".description1");
