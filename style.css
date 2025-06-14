@@ -983,4 +983,7 @@ button:focus {
   .timeline-event-horizontal:hover .timeline-content-horizontal {
     background: #222;
   }
+  .vergleich-text p {
+    color: #c4c4c4;
+  }
 }
