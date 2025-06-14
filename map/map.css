@@ -32,7 +32,7 @@ svg {
 }
 
 path {
-  fill: #c0ebff;
+  fill: #c3c3c3;
   stroke: #111;
   transition: 100ms;
 }
@@ -107,10 +107,10 @@ button:disabled:hover {
 }
 
 .hovered {
-  fill: #65bfff !important;
+  fill: #727272 !important;
 }
 
 .selectable {
   cursor: pointer;
-  fill: #64aaff;
+  fill: #909090;
 }
