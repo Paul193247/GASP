@@ -107,10 +107,10 @@ button:disabled:hover {
 }
 
 .hovered {
-  fill: #727272 !important;
+  fill: #051025 !important;
 }
 
 .selectable {
   cursor: pointer;
-  fill: rgb(37, 150, 190);
+  fill: #213566;
 }
