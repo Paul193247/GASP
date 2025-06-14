@@ -756,17 +756,13 @@ button:focus {
 /* Timeline styles (kopiert aus Geschichte.html) */
 .timeline-horizontal {
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
-  overflow-x: auto;
-  padding: 80px 0 60px 0;
-  margin: 0;
-  width: 100vw !important;
-  min-width: 100vw !important;
-  max-width: 100vw !important;
-  scrollbar-width: thin;
-  position: relative;
-  min-height: 220px;
-  background: transparent;
+  justify-content: space-between; /* gleichmäßiger Abstand */
+  width: 100%;
+  padding: 40px 0;
+  gap: 0; /* kein zusätzlicher Abstand */
+  overflow: visible; /* kein Scrollen */
 }
 .timeline-horizontal::-webkit-scrollbar {
   height: 8px;
@@ -778,26 +774,24 @@ button:focus {
 .timeline-horizontal-track {
   position: absolute;
   left: 0;
-  top: 62px;
+  top: 53px;
   height: 4px;
-  width: 200% !important;
+  width: 100% !important;
   min-width: 100% !important;
   max-width: 500% !important;
-  background: #003399;
+  background: rgb(108, 108, 108);
   border-radius: 2px;
   z-index: 0;
   pointer-events: none;
 }
 .timeline-event-horizontal {
-  position: relative;
-  min-width: 220px;
-  max-width: 260px;
-  margin-right: 60px;
-  flex-shrink: 0;
+  flex: 1 1 0;
+  max-width: none;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 1;
+  margin: 0 8px;
 }
 .timeline-event-horizontal:last-child {
   margin-right: 0;
@@ -805,30 +799,23 @@ button:focus {
 .timeline-dot-horizontal {
   width: 28px;
   height: 28px;
-  background: #fff;
-  border: 4px solid #003399;
+  background: #f0f0f0;
+  border: 4px solid rgb(108, 108, 108);;
   border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
+  margin-bottom: 8px;
 }
 .timeline-date-horizontal {
   font-weight: bold;
-  color: #003399;
+  color: #000;
   margin-bottom: 8px;
   font-size: 1.1em;
   text-align: center;
-  margin-top: 0;
 }
 .timeline-content-horizontal {
   background: #f0f0f0;
   border-radius: 12px;
   padding: 18px 18px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-  transition: background 0.3s;
   text-align: center;
   min-height: 100px;
   margin-top: 15px;
@@ -838,23 +825,31 @@ button:focus {
 }
 @media (max-width: 700px) {
   .timeline-horizontal {
-    padding: 40px 0 20px 0;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px 0;
   }
   .timeline-event-horizontal {
-    min-width: 160px;
-    max-width: 180px;
-    margin-right: 24px;
-  }
-  .timeline-content-horizontal {
-    font-size: 0.95em;
-    padding: 12px 8px;
-    margin-top: 40px;
-  }
-  .timeline-horizontal-track {
-    top: 44px;
+    flex: unset;
+    margin: 0 0 24px 0;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
   }
   .timeline-dot-horizontal {
-    top: 32px;
+    margin-bottom: 0;
+    margin-right: 16px;
+    margin-top: 8px;
+  }
+  .timeline-date-horizontal,
+  .timeline-content-horizontal {
+    text-align: left;
+    margin-top: 0;
+  }
+  .timeline-content-horizontal {
+    margin-top: 0;
+    padding: 12px 8px;
+    font-size: 0.95em;
   }
 }
 
