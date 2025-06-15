@@ -837,6 +837,16 @@ button:focus {
   .timeline-vertical {
     display: flex;
   }
+  /* Erhöhe den linken Abstand für den Zeitstrahl auf kleinen Bildschirmen */
+  #history .timeline-horizontal,
+  #history .timeline-horizontal-track {
+    margin-left: 24px !important;
+    /* Optional: falls noch mehr Abstand gewünscht wird, Wert erhöhen */
+  }
+  #history .timeline-event-horizontal {
+    margin-left: 12px;
+    margin-right: 8px;
+  }
 }
 
 .img_dark_theme {
