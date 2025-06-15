@@ -837,11 +837,11 @@ button:focus {
   .timeline-vertical {
     display: flex;
   }
-  /* Erhöhe den linken Abstand für den Zeitstrahl auf kleinen Bildschirmen */
+  /* Erhöhe den rechten Abstand, verringere den linken Abstand für den Zeitstrahl auf kleinen Bildschirmen */
   #history .timeline-horizontal,
   #history .timeline-horizontal-track {
-    margin-left: 24px !important;
-    /* Optional: falls noch mehr Abstand gewünscht wird, Wert erhöhen */
+    margin-left: 8px !important;   /* kleiner Abstand links */
+    margin-right: 32px !important; /* größerer Abstand rechts */
   }
   #history .timeline-event-horizontal {
     margin-left: 12px;
