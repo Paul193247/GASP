@@ -816,6 +816,19 @@ button:focus {
   display: block;
 }
 
+.container button {
+  padding: 12px 24px;
+  background-color: #d4d4d4;
+  color: #333;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
 @media (prefers-color-scheme: dark) {
   .img_dark_theme {
     display: block;
@@ -986,16 +999,8 @@ button:focus {
   .vergleich-text p {
     color: #c4c4c4;
   }
-}
-
-.pdf-style {
-  background: white !important;
-  color: black !important;
-  font-family: Arial, sans-serif !important;
-  font-size: 12pt !important;
-  line-height: 1.6 !important;
-  padding: 20mm !important;
-  width: 210mm !important;
-  min-height: 297mm !important;
-  border-radius: 0 !important;
+  .container button {
+    background: linear-gradient(135deg, #333, #555);
+    color: #f0f0f0;
+  }
 }
