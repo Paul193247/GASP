@@ -228,7 +228,7 @@ nav {
   height: auto;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-} /* Chart Placeholder */
+}
 .chart-placeholder {
   background: #f0f0f0;
   border-radius: 12px;
@@ -240,28 +240,25 @@ nav {
   box-sizing: border-box;
 }
 
-/* Titel */
 .chart-placeholder h4 {
   margin-bottom: 30px;
   color: #333;
   font-size: 20px;
 }
 
-/* Container für Balken */
 .chart-bars {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   height: 200px;
   gap: 10px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
-/* Einzelner Balken */
 .bar {
   background: linear-gradient(to top, #525252, #727272);
-  width: calc(100% / 5 - 8px); /* Platz für 5 Balken inkl. Lücke */
-  min-width: 40px;
+  flex: 1;
+  max-width: 50px; /* Verhindert zu breite Balken */
   border-radius: 4px 4px 0 0;
   position: relative;
   transition: all 0.3s ease;
@@ -292,18 +289,17 @@ nav {
   }
 
   .chart-bars {
-    gap: 8px;
+    gap: 6px;
   }
 
   .bar {
-    width: calc(100% / 4 - 6px); /* Weniger Balken nebeneinander */
+    max-width: 30px;
   }
 
   .bar span {
     font-size: 11px;
   }
 }
-
 /* Features Section */
 .features {
   padding: 100px 0;
