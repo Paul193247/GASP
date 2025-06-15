@@ -824,6 +824,67 @@ button:focus {
   }
 }
 
+/* Vertikale Timeline (Käse/Karten-Stil) */
+.timeline-vertical {
+  display: none;
+  flex-direction: column;
+  gap: 32px;
+  margin: 32px 0;
+  width: 100%;
+  align-items: center;
+}
+.timeline-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 28px 24px;
+  max-width: 500px;
+  width: 90%;
+  border-left: 8px solid #003399;
+  position: relative;
+  transition: box-shadow 0.2s;
+}
+.timeline-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.16);
+}
+.timeline-card-date {
+  font-weight: bold;
+  color: #003399;
+  font-size: 1.1em;
+  margin-bottom: 12px;
+}
+.timeline-card-content {
+  color: #333;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+/* Dark Mode Anpassung */
+@media (prefers-color-scheme: dark) {
+  .timeline-card {
+    background: #222;
+    color: #f0f0f0;
+    border-left: 8px solid #7eaaff;
+    box-shadow: 0 4px 24px rgba(250,250,250,0.08);
+  }
+  .timeline-card-date {
+    color: #7eaaff;
+  }
+  .timeline-card-content {
+    color: #f0f0f0;
+  }
+}
+
+/* Umschalten: Zeige vertikale Timeline nur auf kleinen Bildschirmen */
+@media (max-width: 700px) {
+  .timeline-horizontal {
+    display: none !important;
+  }
+  .timeline-vertical {
+    display: flex;
+  }
+}
+
 .img_dark_theme {
   display: none;
 }
