@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PDF Test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  </head>
+  <body>
+    <div
+      id="pdf-inhalt"
+      style="width: 210mm; padding: 20mm; border: 1px solid #ccc"
+    >
+      <h1>Test PDF</h1>
+      <p>Dies ist ein einfacher Test.</p>
+    </div>
+
+    <button onclick="erzeugePDF()">PDF herunterladen</button>
+
+    <script>
+      function erzeugePDF() {
+        const element = document.getElementById("pdf-inhalt");
+        html2pdf().from(element).save();
+      }
+    </script>
+  </body>
+</html>
