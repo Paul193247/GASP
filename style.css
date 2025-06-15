@@ -134,6 +134,11 @@ nav {
     display: none;
   }
 }
+
+a {
+  color: #333;
+}
+
 /* Content Sections */
 .content-section {
   padding: 100px 0;
@@ -1097,6 +1102,9 @@ button:focus {
   }
   .container button {
     background: linear-gradient(135deg, #333, #555);
+    color: #f0f0f0;
+  }
+  a {
     color: #f0f0f0;
   }
 }
