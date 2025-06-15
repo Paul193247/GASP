@@ -228,8 +228,7 @@ nav {
   height: auto;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-/* Chart Placeholder */
+} /* Chart Placeholder */
 .chart-placeholder {
   background: #f0f0f0;
   border-radius: 12px;
@@ -237,44 +236,41 @@ nav {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   text-align: center;
   border: 1px solid #d0d0d0;
-  max-width: 100%;
+  width: 100%;
   box-sizing: border-box;
-  overflow-x: auto;
 }
 
+/* Titel */
 .chart-placeholder h4 {
   margin-bottom: 30px;
   color: #333;
   font-size: 20px;
 }
 
-/* Flex container for bars */
+/* Container für Balken */
 .chart-bars {
   display: flex;
-  justify-content: space-around;
-  align-items: end;
+  justify-content: space-between;
+  align-items: flex-end;
   height: 200px;
-  gap: 20px;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  padding-bottom: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-/* Single bar */
+/* Einzelner Balken */
 .bar {
   background: linear-gradient(to top, #525252, #727272);
-  width: 60px;
+  width: calc(100% / 5 - 8px); /* Platz für 5 Balken inkl. Lücke */
+  min-width: 40px;
   border-radius: 4px 4px 0 0;
   position: relative;
   transition: all 0.3s ease;
-  flex-shrink: 0;
 }
 
 .bar:hover {
   background: linear-gradient(to top, #333, #525252);
 }
 
-/* Label unter der Bar */
 .bar span {
   position: absolute;
   bottom: -25px;
@@ -285,7 +281,7 @@ nav {
   white-space: nowrap;
 }
 
-/* Responsive Styles */
+/* Responsive */
 @media (max-width: 600px) {
   .chart-placeholder {
     padding: 20px;
@@ -296,12 +292,11 @@ nav {
   }
 
   .chart-bars {
-    gap: 12px;
-    justify-content: flex-start;
+    gap: 8px;
   }
 
   .bar {
-    width: 40px;
+    width: calc(100% / 4 - 6px); /* Weniger Balken nebeneinander */
   }
 
   .bar span {
