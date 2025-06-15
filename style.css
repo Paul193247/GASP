@@ -880,7 +880,7 @@ button:focus {
     width: 100%;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    background: #fff;
+    background: #222222;
     padding: 18px 16px;
     margin: 0;
     border: 1px solid #e0e0e0;
